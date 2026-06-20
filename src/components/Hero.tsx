@@ -21,7 +21,7 @@ export default function Hero() {
       }`}
     >
       {/* 1. Large Model Background Image (Crossfade transition) */}
-      <div className="relative lg:absolute h-[45vh] lg:h-auto lg:top-16 lg:bottom-12 left-0 right-0 z-0 flex items-center justify-center w-full mt-4 lg:mt-0">
+      <div className="relative lg:absolute h-[50vh] lg:h-auto lg:top-16 lg:bottom-12 left-0 right-0 z-0 flex items-center justify-center w-full mt-4 lg:mt-0">
         <div className="relative w-full h-full max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -45,11 +45,11 @@ export default function Hero() {
       </div>
 
       {/* 2. Left side vertical timeline / slide indicator */}
-      <div className="hidden lg:flex flex-col items-center absolute left-16 top-[32%] z-20 select-none">
+      <div className="flex flex-col items-center absolute left-4 lg:left-16 top-[22%] lg:top-[32%] z-20 select-none">
         <span className={`text-[11px] font-bold tracking-wider transition-colors duration-300 ${activeTheme === 'brown' ? 'text-brand-text' : 'text-brand-red'}`}>01</span>
         <div className="w-5 h-[1.5px] bg-brand-text/30 my-1"></div>
         <span className="text-[11px] font-bold text-brand-text tracking-wider">03</span>
-        <div className="w-[1.5px] h-72 bg-brand-text/20 mt-6 relative">
+        <div className="w-[1.5px] h-32 lg:h-72 bg-brand-text/20 mt-4 lg:mt-6 relative">
           <motion.div
             className={`absolute top-0 left-0 w-full ${activeTheme === 'brown' ? 'bg-brand-burgundy' : 'bg-brand-red'}`}
             initial={{ height: 0 }}
@@ -61,7 +61,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. Main content overlays */}
+      {/* 3. Top-Right Static Circular Stamp (mockup matches) */}
+      <div className="absolute right-4 lg:right-16 top-[18%] lg:top-[22%] z-20 select-none">
+        <svg viewBox="0 0 100 100" className="w-16 h-16 lg:w-20 lg:h-20">
+          <path id="circlePathHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+          <text className="text-[7.5px] font-bold tracking-[0.25em] fill-brand-text/80 uppercase">
+            <textPath href="#circlePathHero">BEYOND THE TREND • NORTH PACIFIC •</textPath>
+          </text>
+          <text x="50" y="55" className="text-xl fill-brand-red font-display text-center font-bold" textAnchor="middle">N</text>
+        </svg>
+      </div>
+
+      {/* 4. Main content overlays */}
       <div className="w-full px-6 md:px-12 lg:max-w-7xl lg:mx-auto relative z-10 flex flex-col lg:flex-grow lg:flex-row lg:items-center pt-8 lg:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center">
           
@@ -139,36 +150,36 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 4. Bottom Row: Theme selector cards only */}
-      <div className="absolute bottom-6 right-6 md:bottom-10 md:right-12 z-20 flex items-center space-x-3">
-          {heroVariants.map((t) => {
-            const isActive = activeTheme === t.theme;
-            return (
-              <div
-                key={t.id}
-                onClick={() => setActiveTheme(t.theme)}
-                className={`flex items-center px-1.5 py-1.5 border bg-white/90 backdrop-blur-sm rounded-sm cursor-pointer shadow-sm transition-all duration-300 ${
-                  isActive 
-                    ? 'border-brand-text border-2 ring-1 ring-brand-text/10 scale-105 shadow-md' 
-                    : 'border-brand-border hover:border-brand-text/50 hover:bg-white'
-                }`}
-              >
-                {/* Variant image cropped thumbnail */}
-                <div className="relative w-9 h-9 md:w-11 md:h-11 overflow-hidden bg-brand-surface border border-brand-border/60 rounded-sm mr-1.5 flex-shrink-0">
-                  <Image
-                    src={t.imagePath}
-                    alt={t.theme}
-                    fill
-                    sizes="44px"
-                    className="object-cover object-top scale-150 translate-y-1"
-                  />
-                </div>
-                {/* Arrow mark only */}
-                <ArrowRight className={`w-3.5 h-3.5 mr-0.5 transition-transform duration-300 ${isActive ? 'text-brand-red translate-x-0.5' : 'text-brand-muted'}`} />
+      {/* 5. Bottom Row: Theme selector cards only */}
+      <div className="relative lg:absolute mt-8 lg:bottom-10 lg:right-12 z-20 flex items-center justify-center lg:justify-end space-x-3 w-full lg:w-auto">
+        {heroVariants.map((t) => {
+          const isActive = activeTheme === t.theme;
+          return (
+            <div
+              key={t.id}
+              onClick={() => setActiveTheme(t.theme)}
+              className={`flex items-center px-1.5 py-1.5 border bg-white/90 backdrop-blur-sm rounded-sm cursor-pointer shadow-sm transition-all duration-300 ${
+                isActive 
+                  ? 'border-brand-text border-2 ring-1 ring-brand-text/10 scale-105 shadow-md' 
+                  : 'border-brand-border hover:border-brand-text/50 hover:bg-white'
+              }`}
+            >
+              {/* Variant image cropped thumbnail */}
+              <div className="relative w-9 h-9 md:w-11 md:h-11 overflow-hidden bg-brand-surface border border-brand-border/60 rounded-sm mr-1.5 flex-shrink-0">
+                <Image
+                  src={t.imagePath}
+                  alt={t.theme}
+                  fill
+                  sizes="44px"
+                  className="object-cover object-top scale-150 translate-y-1"
+                />
               </div>
-            );
-          })}
-        </div>
+              {/* Arrow mark only */}
+              <ArrowRight className={`w-3.5 h-3.5 mr-0.5 transition-transform duration-300 ${isActive ? 'text-brand-red translate-x-0.5' : 'text-brand-muted'}`} />
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }
