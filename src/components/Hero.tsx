@@ -16,12 +16,12 @@ export default function Hero() {
 
   return (
     <section 
-      className={`relative min-h-screen w-full transition-colors duration-700 ease-in-out select-none flex flex-col justify-start lg:justify-between pt-20 lg:pt-28 pb-10 overflow-hidden ${
+      className={`relative min-h-screen lg:min-h-screen w-full transition-colors duration-700 ease-in-out select-none flex flex-col justify-between pt-16 lg:pt-28 pb-6 lg:pb-10 overflow-hidden ${
         activeTheme === 'blue' ? 'bg-[#f8f2ec]' : activeTheme === 'brown' ? 'bg-[#c3af9e]' : 'bg-[#eaded5]'
       }`}
     >
       {/* 1. Large Model Background Image (Crossfade transition) */}
-      <div className="relative lg:absolute h-[50vh] lg:h-auto lg:top-16 lg:bottom-12 left-0 right-0 z-0 flex items-center justify-center w-full mt-4 lg:mt-0">
+      <div className="relative lg:absolute h-[42vh] lg:h-auto lg:top-16 lg:bottom-12 left-0 right-0 z-0 flex items-center justify-center w-full mt-2 lg:mt-0">
         <div className="relative w-full h-full max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -37,7 +37,7 @@ export default function Hero() {
                 alt={`North Pacific - ${currentVariant.theme} theme`}
                 fill
                 priority
-                className="object-contain object-center scale-[1.05] lg:scale-[1.2] transition-all duration-700"
+                className="object-contain object-center scale-[1.15] lg:scale-[1.2] transition-all duration-700"
               />
             </motion.div>
           </AnimatePresence>
@@ -45,11 +45,11 @@ export default function Hero() {
       </div>
 
       {/* 2. Left side vertical timeline / slide indicator */}
-      <div className="flex flex-col items-center absolute left-4 lg:left-16 top-[22%] lg:top-[32%] z-20 select-none">
+      <div className="flex flex-col items-center absolute left-4 lg:left-16 top-[15%] lg:top-[32%] z-20 select-none">
         <span className={`text-[11px] font-bold tracking-wider transition-colors duration-300 ${activeTheme === 'brown' ? 'text-brand-text' : 'text-brand-red'}`}>01</span>
         <div className="w-5 h-[1.5px] bg-brand-text/30 my-1"></div>
         <span className="text-[11px] font-bold text-brand-text tracking-wider">03</span>
-        <div className="w-[1.5px] h-32 lg:h-72 bg-brand-text/20 mt-4 lg:mt-6 relative">
+        <div className="w-[1.5px] h-24 lg:h-72 bg-brand-text/20 mt-3 lg:mt-6 relative">
           <motion.div
             className={`absolute top-0 left-0 w-full ${activeTheme === 'brown' ? 'bg-brand-burgundy' : 'bg-brand-red'}`}
             initial={{ height: 0 }}
@@ -61,9 +61,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. Top-Right Static Circular Stamp (mockup matches) */}
-      <div className="absolute right-4 lg:right-16 top-[18%] lg:top-[22%] z-20 select-none">
-        <svg viewBox="0 0 100 100" className="w-16 h-16 lg:w-20 lg:h-20">
+      {/* 3. Top-Right Static Circular Stamp */}
+      <div className="absolute right-4 lg:right-16 top-[12%] lg:top-[22%] z-20 select-none">
+        <svg viewBox="0 0 100 100" className="w-14 h-14 lg:w-20 lg:h-20">
           <path id="circlePathHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
           <text className="text-[7.5px] font-bold tracking-[0.25em] fill-brand-text/80 uppercase">
             <textPath href="#circlePathHero">BEYOND THE TREND • NORTH PACIFIC •</textPath>
@@ -73,16 +73,16 @@ export default function Hero() {
       </div>
 
       {/* 4. Main content overlays */}
-      <div className="w-full px-6 md:px-12 lg:max-w-7xl lg:mx-auto relative z-10 flex flex-col lg:flex-grow lg:flex-row lg:items-center pt-8 lg:pt-0">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center">
+      <div className="w-full px-6 md:px-12 lg:max-w-7xl lg:mx-auto relative z-10 flex flex-col lg:flex-grow lg:flex-row lg:items-center pt-2 lg:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 w-full items-center">
           
           {/* Left Column: Heading and description */}
-          <div className="lg:col-span-7 flex flex-col space-y-6 pt-4 lg:pt-10 lg:pl-16 relative">
+          <div className="lg:col-span-7 flex flex-col space-y-4 lg:space-y-6 pt-2 lg:pt-10 lg:pl-16 relative">
             
             {/* Top tiny title */}
             <div className="flex flex-col space-y-2">
               <div className="flex items-center space-x-2">
-                <span className="text-[11px] font-bold tracking-[0.35em] text-brand-text uppercase leading-none">
+                <span className="text-[10px] lg:text-[11px] font-bold tracking-[0.35em] text-brand-text uppercase leading-none">
                   CRAFTED TO MOVE
                 </span>
                 <span className="text-brand-red font-bold text-xs leading-none">.</span>
@@ -91,31 +91,31 @@ export default function Hero() {
 
             {/* Huge Heading overlay block */}
             <div className="relative select-none">
-              <h1 className="text-[4.5rem] sm:text-[7rem] md:text-[9.5rem] lg:text-[11.5rem] font-oswald font-extrabold text-brand-text tracking-tight uppercase leading-[0.75] mb-2 select-none">
+              <h1 className="text-[4rem] sm:text-[7rem] md:text-[9.5rem] lg:text-[11.5rem] font-oswald font-extrabold text-brand-text tracking-tight uppercase leading-[0.75] mb-1 lg:mb-2 select-none">
                 BEYOND
               </h1>
               
               {/* Overlapping cursive text */}
-              <span className="absolute left-[3%] top-[45%] font-script text-[4.5rem] sm:text-[6.5rem] md:text-[9rem] lg:text-[10.5rem] text-brand-red transform -rotate-[5deg] translate-y-[-10px] select-none pointer-events-none drop-shadow-sm z-10 leading-none">
+              <span className="absolute left-[3%] top-[45%] font-script text-[4rem] sm:text-[6.5rem] md:text-[9rem] lg:text-[10.5rem] text-brand-red transform -rotate-[5deg] translate-y-[-5px] select-none pointer-events-none drop-shadow-sm z-10 leading-none">
                 The Trend
               </span>
             </div>
 
             {/* Bottom details & CTA */}
-            <div className="space-y-6 pt-4 lg:pt-8">
-              <div className="space-y-3">
-                <div className="text-[11px] font-bold tracking-[0.25em] text-brand-text uppercase">
+            <div className="space-y-4 lg:space-y-6 pt-2 lg:pt-8">
+              <div className="space-y-2">
+                <div className="text-[10px] lg:text-[11px] font-bold tracking-[0.25em] text-brand-text uppercase">
                   <span className="text-brand-text/50">PREMIUM </span> 
                   <span className="text-brand-red">T-SHIRTS & SHIRTS</span>
                 </div>
-                <div className="w-12 h-[2px] bg-brand-text/80" />
+                <div className="hidden lg:block w-12 h-[2px] bg-brand-text/80" />
               </div>
 
               {/* Action buttons */}
-              <div className="flex flex-wrap items-center gap-6 pt-2">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-1 lg:pt-2 w-full">
                 <a
                   href="#categories"
-                  className="px-6 py-4 border border-brand-text bg-transparent hover:bg-brand-text hover:text-white text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center space-x-3 rounded-none shadow-sm"
+                  className="w-full sm:w-auto justify-center px-6 py-3.5 border border-brand-text bg-white/40 hover:bg-brand-text hover:text-white text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center space-x-3 rounded-none shadow-sm"
                 >
                   <span>EXPLORE COLLECTION</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -123,7 +123,7 @@ export default function Hero() {
 
                 <button
                   onClick={handleWhatsAppChat}
-                  className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-text hover:text-brand-red transition-all duration-200 flex items-center space-x-2 border-b border-brand-red pb-1"
+                  className="w-full sm:w-auto justify-center text-[10px] font-bold tracking-[0.2em] uppercase text-brand-text hover:text-brand-red transition-all duration-200 flex items-center space-x-2 border-b border-brand-red pb-1"
                 >
                   <span>CHAT ON WHATSAPP</span>
                   <MessageSquare className="w-3.5 h-3.5 fill-current" />
@@ -134,7 +134,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Quotes block only (Circular SVG stamp removed) */}
-          <div className="lg:col-span-5 h-full flex flex-col justify-between items-end relative py-6 lg:py-12">
+          <div className="lg:col-span-5 h-full flex flex-col justify-between items-end relative py-0 lg:py-12">
             
             {/* Quotes block */}
             <div className="absolute right-0 bottom-[28%] z-20 flex flex-col items-start max-w-[190px] hidden md:block select-none text-left">
@@ -151,7 +151,7 @@ export default function Hero() {
       </div>
 
       {/* 5. Bottom Row: Theme selector cards only */}
-      <div className="relative lg:absolute mt-8 lg:bottom-10 lg:right-12 z-20 flex items-center justify-center lg:justify-end space-x-3 w-full lg:w-auto">
+      <div className="relative lg:absolute mt-4 lg:bottom-10 lg:right-12 z-20 flex items-center justify-center lg:justify-end space-x-3 w-full lg:w-auto px-6 lg:px-0">
         {heroVariants.map((t) => {
           const isActive = activeTheme === t.theme;
           return (

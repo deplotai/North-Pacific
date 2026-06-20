@@ -47,18 +47,30 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative">
           
-          {/* Left: Nav Links */}
-          <nav className="flex items-center space-x-8 text-[11px] font-bold tracking-[0.2em] text-brand-text">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-brand-red transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+          {/* Left: Nav Links (Desktop) / Hamburger Menu (Mobile) */}
+          <div className="flex items-center">
+            {/* Hamburger menu for mobile */}
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="lg:hidden hover:text-brand-red transition-colors p-1.5 -ml-1.5"
+              aria-label="Menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+
+            {/* Desktop Nav Links */}
+            <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-bold tracking-[0.2em] text-brand-text">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="hover:text-brand-red transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+          </div>
 
           {/* Center: Brand Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
@@ -76,7 +88,7 @@ export default function Header() {
           {/* Right: Actions */}
           <div className="flex items-center space-x-6 text-brand-text">
             {/* Search */}
-            <button className="hover:text-brand-red transition-colors p-1.5 hidden sm:block" aria-label="Search">
+            <button className="hover:text-brand-red transition-colors p-1.5" aria-label="Search">
               <Search className="w-4 h-4" />
             </button>
 
@@ -109,10 +121,10 @@ export default function Header() {
               )}
             </button>
 
-            {/* Hamburger menu */}
+            {/* Hamburger menu (Desktop only) */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="hover:text-brand-red transition-colors p-1.5"
+              className="hidden lg:block hover:text-brand-red transition-colors p-1.5"
               aria-label="Menu"
             >
               <Menu className="w-4.5 h-4.5" />
