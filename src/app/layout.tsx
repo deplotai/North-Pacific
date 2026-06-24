@@ -1,37 +1,26 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans, Oswald, Mrs_Saint_Delafield } from "next/font/google";
+import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const manrope = Manrope({
   subsets: ["latin"],
-  display: "swap",
+  variable: "--font-manrope",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  display: "swap",
-});
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const scriptFont = Mrs_Saint_Delafield({
-  variable: "--font-script",
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "North Pacific | Premium Catalogue & Custom Apparel",
-  description: "Explore the North Pacific collection. Editorial minimal T-shirts, shirts, and custom clothing crafted with premium care. Direct ordering via WhatsApp.",
-  keywords: "North Pacific, clothing, premium t-shirts, shirts, clothing manufacturer, fashion brand, custom orders, catalog",
+  title: "NORTH PACIFIC | Premium Streetwear",
+  description: "Premium streetwear and apparel by North Pacific. Order direct via WhatsApp.",
 };
+
+import { CartProvider } from "@/context/CartContext";
 
 export default function RootLayout({
   children,
@@ -41,9 +30,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jakarta.variable} ${oswald.variable} ${scriptFont.variable} h-full antialiased`}
+      className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-brand-bg text-brand-text flex flex-col">{children}</body>
+      <head>
+        {/* FontAwesome for icons */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          precedence="default"
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }

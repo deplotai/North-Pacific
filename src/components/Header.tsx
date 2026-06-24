@@ -1,200 +1,315 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ShoppingBag, Search, User, Menu, X } from 'lucide-react';
-import { useCartStore } from '@/store/cartStore';
+import React, { useEffect, useState } from "react";
+import { useCart } from "@/context/CartContext";
+import { CATEGORY_TREE } from "@/data/cms";
 
-export default function Header() {
+interface HeaderProps {
+  onSelectCategory?: (category: string) => void;
+}
+
+export default function Header({ onSelectCategory }: HeaderProps) {
+  const {
+    cart,
+    setIsCartOpen,
+    isSidebarOpen,
+    setIsSidebarOpen,
+  } = useCart();
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { setIsOpen: openCart, getTotalItems } = useCartStore();
-  const [cartCount, setCartCount] = useState(0);
-
-  const totalItems = getTotalItems();
-  useEffect(() => {
-    setCartCount(totalItems);
-  }, [totalItems]);
+  const [expandedMain, setExpandedMain] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'COLLECTIONS', href: '#categories' },
-    { name: 'REELS', href: '#campaigns' },
-    { name: 'WHY US', href: '#why-north-pacific' },
-    { name: 'CONNECT', href: '#whatsapp-cta' },
-  ];
+  const totalCount = cart.reduce((total, item) => total + item.qty, 0);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    const element = document.querySelector(hash);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleCategoryClick = (category: string) => {
+    setIsSidebarOpen(false);
+    setExpandedMain(null);
+    if (onSelectCategory) onSelectCategory(category);
+    const element = document.querySelector("#products-section");
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const toggleMain = (id: string) => {
+    setExpandedMain((prev) => (prev === id ? null : id));
+  };
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-brand-bg/95 backdrop-blur-md border-b border-brand-border/60 py-4 shadow-sm'
-            : 'bg-transparent py-6'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative">
-          
-          {/* Left: Nav Links (Desktop) / Hamburger Menu (Mobile) */}
-          <div className="flex items-center">
-            {/* Hamburger menu for mobile */}
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden hover:text-brand-red transition-colors p-1.5 -ml-1.5"
-              aria-label="Menu"
+      <header className={`main-header ${isScrolled ? "scrolled" : ""}`}>
+        <div className="header-left">
+          <button
+            className="nav-toggle"
+            aria-label="Open Menu"
+            onClick={() => setIsSidebarOpen(true)}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+          <nav className="desktop-nav">
+            <a
+              href="#products-section"
+              className="nav-link"
+              onClick={(e) => handleNavClick(e, "#products-section")}
             >
-              <Menu className="w-5 h-5" />
-            </button>
-
-            {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-bold tracking-[0.2em] text-brand-text">
-              {navLinks.map((link) => (
+              Shop
+            </a>
+            <a
+              href="#offers-section"
+              className="nav-link"
+              onClick={(e) => handleNavClick(e, "#offers-section")}
+            >
+              Offers
+            </a>
+            <a
+              href="#reels-section"
+              className="nav-link"
+              onClick={(e) => handleNavClick(e, "#reels-section")}
+            >
+              NP Reels
+            </a>
+            <div className="nav-dropdown-container">
+              <button className="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                Brochures <i className="fa-solid fa-chevron-down" style={{ fontSize: "8px" }}></i>
+              </button>
+              <div className="nav-dropdown-menu">
                 <a
-                  key={link.name}
-                  href={link.href}
-                  className="hover:text-brand-red transition-colors duration-200"
+                  href="/brochures/Untitled.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dropdown-item"
                 >
-                  {link.name}
+                  <i className="fa-solid fa-shirt"></i> Streetwear Catalogue
                 </a>
-              ))}
-            </nav>
-          </div>
+                <a
+                  href="/brochures/uniform.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dropdown-item"
+                >
+                  <i className="fa-solid fa-user-tie"></i> Corporate Uniforms
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
 
-          {/* Center: Brand Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-            <Link href="/" className="relative block h-8 w-40 md:h-10 md:w-52 transition-transform hover:scale-[1.02]">
-              <Image
-                src="/logo_in_black_cropped.png"
-                alt="North Pacific Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </Link>
-          </div>
+        <div className="header-center">
+          <a
+            href="#"
+            className="logo-link"
+            onClick={(e) => handleNavClick(e, "#hero-section")}
+          >
+            <div className="brand-logo">
+              <img src="/logo.png" alt="North Pacific Logo" className="header-logo-img" />
+            </div>
+          </a>
+        </div>
 
-          {/* Right: Actions */}
-          <div className="flex items-center space-x-6 text-brand-text">
-            {/* Search */}
-            <button className="hover:text-brand-red transition-colors p-1.5" aria-label="Search">
-              <Search className="w-4 h-4" />
-            </button>
-
-            {/* Profile */}
-            <button className="hover:text-brand-red transition-colors p-1.5 hidden sm:block" aria-label="Profile">
-              <User className="w-4 h-4" />
-            </button>
-
-            {/* Cart Icon with Red Badge */}
-            <button
-              onClick={() => {
-                const elem = document.getElementById('cart-section');
-                if (elem) {
-                  elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="relative p-1.5 hover:text-brand-red transition-colors flex items-center justify-center"
-              aria-label="Open cart"
-              id="cart-drawer-trigger"
-            >
-              <ShoppingBag className="w-4.5 h-4.5" />
-              {cartCount > 0 ? (
-                <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[8px] font-bold h-4 w-4 rounded-full flex items-center justify-center border border-brand-bg">
-                  {cartCount}
-                </span>
-              ) : (
-                <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[8px] font-bold h-4 w-4 rounded-full flex items-center justify-center border border-brand-bg">
-                  0
-                </span>
-              )}
-            </button>
-
-            {/* Hamburger menu (Desktop only) */}
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="hidden lg:block hover:text-brand-red transition-colors p-1.5"
-              aria-label="Menu"
-            >
-              <Menu className="w-4.5 h-4.5" />
-            </button>
-          </div>
-
+        <div className="header-right">
+          <a
+            href="#enquiry-section"
+            className="nav-link desktop-only"
+            onClick={(e) => handleNavClick(e, "#enquiry-section")}
+            style={{ marginRight: "20px" }}
+          >
+            Enquiry
+          </a>
+          <button
+            className="cart-toggle-btn"
+            aria-label="View Cart"
+            onClick={() => setIsCartOpen(true)}
+          >
+            <span className="cart-icon-wrapper">
+              <i className="fa-solid fa-bag-shopping"></i>
+              {totalCount > 0 && <span className="cart-count">{totalCount}</span>}
+            </span>
+          </button>
         </div>
       </header>
 
-      {/* Mobile Drawer (Matches brand layout) */}
+      {/* Slide-out Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-black/40 transition-opacity duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setIsMobileMenuOpen(false)}
-      >
-        <div
-          className={`absolute left-0 top-0 bottom-0 w-[80%] max-w-xs bg-brand-bg p-8 border-r border-brand-border flex flex-col justify-between transition-transform duration-300 ease-out ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div>
-            <div className="flex items-center justify-between mb-12">
-              <div className="relative h-8 w-40">
-                <Image
-                  src="/logo_in_black_cropped.png"
-                  alt="North Pacific Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-1 hover:text-brand-red transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+        className={`mobile-sidebar-overlay ${isSidebarOpen ? "active" : ""}`}
+        onClick={() => setIsSidebarOpen(false)}
+      ></div>
+      <aside className={`mobile-sidebar ${isSidebarOpen ? "active" : ""}`}>
+        <div className="sidebar-header">
+          <span className="sidebar-title">SHOP</span>
+          <button
+            className="sidebar-close"
+            aria-label="Close Menu"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            &times;
+          </button>
+        </div>
 
-            <nav className="flex flex-col space-y-6 text-sm font-semibold tracking-widest text-brand-text">
-              {navLinks.map((link) => (
+        <nav className="sidebar-nav">
+          {/* Shop All */}
+          <a
+            href="#products-section"
+            className="sidebar-link sidebar-shop-all"
+            onClick={(e) => {
+              e.preventDefault();
+              handleCategoryClick("all");
+            }}
+          >
+            <i className="fa-solid fa-grid-2"></i> SHOP ALL
+          </a>
+
+          <div className="sidebar-divider" />
+
+          {/* Grouped Category Accordion */}
+          {CATEGORY_TREE.map((main) => (
+            <div key={main.id} className="sidebar-category-group">
+              <button
+                className={`sidebar-main-cat ${expandedMain === main.id ? "open" : ""}`}
+                onClick={() => {
+                  if (main.subs.length === 0) {
+                    handleCategoryClick(main.id);
+                  } else {
+                    toggleMain(main.id);
+                  }
+                }}
+              >
+                <span className="sidebar-cat-label">
+                  <i className={`${main.icon} sidebar-cat-icon`}></i>
+                  {main.label.toUpperCase()}
+                </span>
+                {main.subs.length > 0 && (
+                  <i className={`fa-solid fa-chevron-down sidebar-chevron ${expandedMain === main.id ? "rotated" : ""}`}></i>
+                )}
+              </button>
+
+              {main.subs.length > 0 && expandedMain === main.id && (
+                <div className="sidebar-sub-list">
+                  <a
+                    href="#products-section"
+                    className="sidebar-sub-link"
+                    style={{ fontWeight: "800", color: "var(--color-black)" }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleCategoryClick(main.id);
+                    }}
+                  >
+                    <span className="sub-dot">·</span> VIEW ALL {main.label.toUpperCase()}
+                  </a>
+                  {main.subs.map((sub) => (
+                    <a
+                      key={sub.id}
+                      href="#products-section"
+                      className="sidebar-sub-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleCategoryClick(sub.id);
+                      }}
+                    >
+                      <span className="sub-dot">·</span> {sub.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          <div className="sidebar-divider" />
+
+          {/* Brochures Group Accordion */}
+          <div className="sidebar-category-group">
+            <button
+              className={`sidebar-main-cat ${expandedMain === "brochures" ? "open" : ""}`}
+              onClick={() => toggleMain("brochures")}
+            >
+              <span className="sidebar-cat-label">
+                <i className="fa-solid fa-file-pdf sidebar-cat-icon"></i>
+                COMPANY BROCHURES
+              </span>
+              <i className={`fa-solid fa-chevron-down sidebar-chevron ${expandedMain === "brochures" ? "rotated" : ""}`}></i>
+            </button>
+            {expandedMain === "brochures" && (
+              <div className="sidebar-sub-list">
                 <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="py-2 border-b border-brand-border/40 hover:text-brand-red transition-colors"
+                  href="/brochures/Untitled.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sidebar-sub-link"
+                  onClick={() => setIsSidebarOpen(false)}
                 >
-                  {link.name}
+                  <span className="sub-dot">·</span> STREETWEAR CATALOGUE
                 </a>
-              ))}
-            </nav>
+                <a
+                  href="/brochures/uniform.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sidebar-sub-link"
+                  onClick={() => setIsSidebarOpen(false)}
+                >
+                  <span className="sub-dot">·</span> CORPORATE UNIFORMS
+                </a>
+              </div>
+            )}
           </div>
 
-          <div className="border-t border-brand-border pt-6 flex flex-col space-y-4">
-            <p className="text-[10px] text-brand-muted tracking-widest uppercase">
-              BEYOND THE TREND
-            </p>
-            <a
-              href="https://wa.me/966578078759"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-brand-navy hover:text-brand-red transition-colors"
-            >
-              Direct Chat: +966 57 807 8759
-            </a>
+          <div className="sidebar-divider" />
+
+          <a
+            href="#offers-section"
+            className="sidebar-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsSidebarOpen(false);
+              document.querySelector("#offers-section")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            ACTIVE OFFERS
+          </a>
+          <a
+            href="#reels-section"
+            className="sidebar-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsSidebarOpen(false);
+              document.querySelector("#reels-section")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            INSTAGRAM REELS
+          </a>
+          <a
+            href="#enquiry-section"
+            className="sidebar-link"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsSidebarOpen(false);
+              document.querySelector("#enquiry-section")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            GENERAL ENQUIRY
+          </a>
+        </nav>
+
+        <div className="sidebar-footer">
+          <p>ORDER VIA WHATSAPP</p>
+          <div className="social-icons">
+            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+            <a href="#"><i className="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i className="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 }

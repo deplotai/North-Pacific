@@ -1,94 +1,197 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { FormEvent } from "react";
+import Link from "next/link";
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+interface FooterProps {
+  onSelectCategory?: (category: string) => void;
+}
+
+export default function Footer({ onSelectCategory }: FooterProps) {
+  const handleNewsletterSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    alert("Thank you for subscribing to North Pacific alerts!");
+    const form = e.target as HTMLFormElement;
+    form.reset();
+  };
+
+  const handleCategoryClick = (category: string) => {
+    if (onSelectCategory) {
+      onSelectCategory(category);
+    }
+    const element = document.querySelector("#products-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <footer className="bg-brand-dark text-white border-t border-white/10 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        {/* Brand info */}
-        <div className="md:col-span-2 flex flex-col space-y-6">
-          <div className="relative h-12 w-60 filter invert">
-            <Image
-              src="/logo_in_black_cropped.png"
-              alt="North Pacific Logo"
-              fill
-              className="object-contain"
-            />
+    <footer className="main-footer">
+      <div className="footer-top section-padding">
+        <div className="section-container footer-grid">
+          <div className="footer-col col-brand">
+            <div className="footer-logo-container">
+              <img src="/logo.png" alt="North Pacific Logo" className="footer-logo-img" />
+            </div>
+            <p className="footer-desc">
+              Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.
+            </p>
+            <div className="footer-socials">
+              <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a>
+              <a href="#" aria-label="TikTok"><i className="fa-brands fa-tiktok"></i></a>
+              <a href="#" aria-label="Pinterest"><i className="fa-brands fa-pinterest"></i></a>
+            </div>
           </div>
-          <p className="text-brand-muted text-xs leading-relaxed max-w-sm tracking-wide">
-            North Pacific is a premium clothing manufacturer delivering heavy-weight streetwear and classic casual garments. Engineered for longevity, designed beyond trends.
-          </p>
-          <div className="flex space-x-6 text-xs text-brand-muted tracking-widest font-semibold pt-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
-              INSTAGRAM
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
-              FACEBOOK
-            </a>
-            <a href="https://wa.me/966578078759" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
-              WHATSAPP
-            </a>
+
+          <div className="footer-col">
+            <h5 className="footer-col-title">COLLECTIONS</h5>
+            <ul className="footer-links">
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("linen shirt");
+                  }}
+                >
+                  Linen Shirts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("pant");
+                  }}
+                >
+                  Streetwear Pants
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("polo tshirt");
+                  }}
+                >
+                  Knit & Waffle Polos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("print tshirt");
+                  }}
+                >
+                  Graphic Tees
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("printed shirt");
+                  }}
+                >
+                  Printed Shirts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products-section"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleCategoryClick("striped shirt");
+                  }}
+                >
+                  Striped Shirts
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        {/* Quick Links */}
-        <div className="flex flex-col space-y-6">
-          <h4 className="text-xs font-bold tracking-widest uppercase text-white/50">
-            COLLECTIONS
-          </h4>
-          <ul className="space-y-3 text-xs tracking-wider text-brand-muted">
-            <li>
-              <a href="#tshirts" className="hover:text-white transition-colors">
-                T-Shirts & Basics
-              </a>
-            </li>
-            <li>
-              <a href="#shirts" className="hover:text-white transition-colors">
-                Casual Shirts
-              </a>
-            </li>
-            <li>
-              <a href="#sweatshirts" className="hover:text-white transition-colors">
-                French Terry Hoodies
-              </a>
-            </li>
-            <li>
-              <a href="#newdrops" className="hover:text-white transition-colors">
-                Limited New Drops
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div className="footer-col">
+            <h5 className="footer-col-title">CUSTOMER SERVICES</h5>
+            <ul className="footer-links">
+              <li>
+                <a href="#enquiry-section" onClick={(e) => handleScrollToSection(e, "#enquiry-section")}>
+                  Sizing Guides
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry-section" onClick={(e) => handleScrollToSection(e, "#enquiry-section")}>
+                  How to Order via WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry-section" onClick={(e) => handleScrollToSection(e, "#enquiry-section")}>
+                  Shipping & Delivery
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry-section" onClick={(e) => handleScrollToSection(e, "#enquiry-section")}>
+                  Returns & Exchanges
+                </a>
+              </li>
+              <li>
+                <a href="#enquiry-section" onClick={(e) => handleScrollToSection(e, "#enquiry-section")}>
+                  General Enquiry Form
+                </a>
+              </li>
+              <li>
+                <a href="/brochures/Untitled.pdf" target="_blank" rel="noopener noreferrer">
+                  Streetwear Catalogue (PDF)
+                </a>
+              </li>
+              <li>
+                <a href="/brochures/uniform.pdf" target="_blank" rel="noopener noreferrer">
+                  Corporate Uniforms (PDF)
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Contact/Stamp */}
-        <div className="flex flex-col space-y-6 justify-between">
-          <div>
-            <h4 className="text-xs font-bold tracking-widest uppercase text-white/50 mb-4">
-              HEADQUARTERS
-            </h4>
-            <address className="not-italic text-xs leading-relaxed text-brand-muted tracking-wide space-y-2">
-              <p>North Pacific Apparel Studio</p>
-              <p>Sector-5, Industrial Area</p>
-              <p>New Delhi, India</p>
-              <p className="pt-2 text-white font-medium">contact@northpacific.cc</p>
-            </address>
+          <div className="footer-col col-newsletter">
+            <h5 className="footer-col-title">STAY CONNECTED</h5>
+            <p>Subscribe to receive early drops notification and special discount windows.</p>
+            <form className="newsletter-form" id="newsletter-form" onSubmit={handleNewsletterSubmit}>
+              <input type="email" placeholder="Enter your email" required aria-label="Email address" />
+              <button type="submit" aria-label="Subscribe"><i className="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <div className="payment-icons">
+              <i className="fa-brands fa-cc-visa"></i>
+              <i className="fa-brands fa-cc-mastercard"></i>
+              <i className="fa-brands fa-cc-apple-pay"></i>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer bottom */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-brand-muted tracking-widest uppercase">
-        <p>© {currentYear} NORTH PACIFIC. ALL RIGHTS RESERVED.</p>
-        <p className="mt-4 md:mt-0 flex space-x-6">
-          <a href="#" className="hover:text-white transition-colors">PRIVACY POLICY</a>
-          <span className="text-white/10">•</span>
-          <a href="#" className="hover:text-white transition-colors">TERMS OF SERVICE</a>
-        </p>
+      <div className="footer-bottom">
+        <div className="section-container footer-bottom-inner">
+          <p>&copy; 2026 NORTH PACIFIC Apparel. All Rights Reserved.</p>
+          <div className="footer-legal">
+            <Link href="/admin" style={{ marginRight: "15px", color: "var(--color-red)", fontWeight: 700 }}>
+              <i className="fa-solid fa-lock"></i> Admin Portal
+            </Link>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
