@@ -616,6 +616,15 @@ export default function Home() {
                         loading="lazy"
                         onClick={() => handleOpenQuickView(product.id)}
                       />
+                      {product.images.length > 1 && (
+                        <img
+                          src={product.images[1]}
+                          alt={`${product.name} alternate view`}
+                          className="product-img img-hover"
+                          loading="lazy"
+                          onClick={() => handleOpenQuickView(product.id)}
+                        />
+                      )}
 
                       <button className="card-bookmark-btn" aria-label="Bookmark product">
                         <i className="fa-regular fa-bookmark"></i>

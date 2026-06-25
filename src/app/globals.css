@@ -11,9 +11,9 @@
     --color-white: #FFFFFF;
     
     /* Typography using Next.js Google Fonts */
-    --font-primary: var(--font-manrope), sans-serif;
-    --font-heading: var(--font-manrope), sans-serif;
-    --font-serif: var(--font-manrope), sans-serif;
+    --font-primary: var(--font-geometric);
+    --font-heading: var(--font-geometric);
+    --font-serif: var(--font-geometric);
     --font-geometric: var(--font-dmsans), 'Helvetica Neue', Helvetica, Arial, sans-serif;
     
     /* Layout & Transition spacing */

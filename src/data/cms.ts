@@ -38,6 +38,7 @@ export const CATEGORY_TREE = [
     subs: [
       { id: "polo tshirt",    label: "Polo T-Shirts" },
       { id: "print tshirt",   label: "Printed T-Shirts" },
+      { id: "striped tshirt", label: "Striped T-Shirts" },
       { id: "uniform tshirt", label: "Uniform T-Shirts" },
     ],
   },
@@ -79,7 +80,7 @@ export const CATEGORY_TREE = [
 ] as const;
 
 export const offers: OfferConfig = {
-  bannerImage: "/pose/WhatsApp Image 2026-06-23 at 5.23.52 PM.jpeg",
+  bannerImage: "/images/mobile-hero-promo.png",
   title: "OFFER WINDOW",
   text: "Elevate your wardrobe with premium fabrics. Special bundle pricing is active for a limited time. Add items to your cart and checkout via WhatsApp to lock in the deals.",
   countdownHours: 12,
@@ -90,16 +91,42 @@ export const products: Product[] = [
   // ── SHIRTS › Linen Shirts ───────────────────────────────────────────────
   {
     id: "linen-shirt-1",
-    name: "Pure Linen Casual Shirt",
+    name: "Premium Linen Beige Shirt",
     mainCategory: "shirts",
     category: "linen shirt",
     price: 45.00,
     images: [
-      "/images/processed/linen-shirt.jpg",
+      "/images/shirts/linen shirt/linen_1.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
     desc: "Crafted from 100% organic linen, this shirt offers unparalleled breathability and a relaxed fit. Garment-dyed for rich color and softness.",
+  },
+  {
+    id: "linen-shirt-2",
+    name: "Premium Linen Blue Shirt",
+    mainCategory: "shirts",
+    category: "linen shirt",
+    price: 45.00,
+    images: [
+      "/images/shirts/linen shirt/linen_2.png",
+    ],
+    badge: "NEW",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "Soft pastel blue premium linen shirt, naturally breathable with double-stitched durability and a comfortable laid-back fit.",
+  },
+  {
+    id: "linen-shirt-3",
+    name: "Premium Linen Olive Shirt",
+    mainCategory: "shirts",
+    category: "linen shirt",
+    price: 48.00,
+    images: [
+      "/images/shirts/linen shirt/linen_3.png",
+    ],
+    badge: "TRENDING",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "Rich olive green premium linen shirt, ideal for smart-casual wear or beach outings. Clean button closures and lightweight drape.",
   },
 
   // ── SHIRTS › Printed Shirts ─────────────────────────────────────────────
@@ -111,7 +138,8 @@ export const products: Product[] = [
     price: 49.00,
     salePrice: 39.00,
     images: [
-      "/images/processed/printed-shirt.jpg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.16 PM.jpeg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.17 PM.jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -124,7 +152,8 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 52.00,
     images: [
-      "/images/processed/printed-shirt.jpg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM.jpeg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM (1).jpeg",
     ],
     badge: "HOT",
     sizes: ["S", "M", "L", "XL"],
@@ -137,7 +166,8 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 50.00,
     images: [
-      "/images/processed/printed-shirt.jpg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM.jpeg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM (1).jpeg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -150,7 +180,8 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 48.00,
     images: [
-      "/images/processed/printed-shirt.jpg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM.jpeg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM (1).jpeg",
     ],
     badge: "",
     sizes: ["M", "L", "XL"],
@@ -164,7 +195,8 @@ export const products: Product[] = [
     price: 52.00,
     salePrice: 42.00,
     images: [
-      "/images/processed/printed-shirt.jpg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM.jpeg",
+      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM (1).jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -174,30 +206,30 @@ export const products: Product[] = [
   // ── SHIRTS › Striped Shirts ─────────────────────────────────────────────
   {
     id: "striped-1",
-    name: "Breton Stripe Box Shirt",
+    name: "Oxford Navy Striped Shirt",
     mainCategory: "shirts",
     category: "striped shirt",
-    price: 35.00,
+    price: 45.00,
     images: [
-      "/images/processed/striped-shirt.jpg",
+      "/images/shirts/striped shirt/striped_1.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
-    desc: "Classic horizontal stripe knit shirt in heavy 280GSM combed cotton. Features dropped shoulders, ribbed mock-neck collar, and relaxed fit.",
+    desc: "Classic vertical stripe knit shirt in premium Oxford cotton. Features dropped shoulders, clean button-down collar, and relaxed fit.",
   },
   {
     id: "striped-2",
-    name: "Horizontal Retro Stripe Shirt",
+    name: "Oxford Red Striped Shirt",
     mainCategory: "shirts",
     category: "striped shirt",
-    price: 36.00,
-    salePrice: 26.00,
+    price: 45.00,
+    salePrice: 35.00,
     images: [
-      "/images/processed/striped-shirt.jpg",
+      "/images/shirts/striped shirt/striped_2.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
-    desc: "Retro colored horizontal knit striped shirt. Relaxed retro aesthetics with boxy streetwear crop fit.",
+    desc: "Retro red-and-white vertical striped Oxford shirt. Breathable, structured drape with timeless styling details.",
   },
 
   // ── T-SHIRTS & POLOS › Polo T-Shirts ────────────────────────────────────
@@ -209,7 +241,8 @@ export const products: Product[] = [
     price: 39.00,
     salePrice: 29.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.20 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.21 PM.jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -222,7 +255,8 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 42.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM (1).jpeg",
     ],
     badge: "ESSENTIAL",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -235,7 +269,8 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 40.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.23 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.25 PM.jpeg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -249,7 +284,8 @@ export const products: Product[] = [
     price: 45.00,
     salePrice: 35.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM (1).jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -262,7 +298,8 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 44.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM (1).jpeg",
     ],
     badge: "NEW",
     sizes: ["M", "L", "XL", "XXL"],
@@ -275,7 +312,8 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 38.00,
     images: [
-      "/images/processed/polo-tshirt.jpg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM.jpeg",
+      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM (1).jpeg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -290,7 +328,8 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 35.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.41 PM.jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.42 PM.jpeg",
     ],
     badge: "POPULAR",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -304,7 +343,8 @@ export const products: Product[] = [
     price: 38.00,
     salePrice: 28.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.42 PM (1).jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.42 PM (2).jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -317,7 +357,8 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 36.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.43 PM.jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.43 PM (1).jpeg",
     ],
     badge: "",
     sizes: ["M", "L", "XL"],
@@ -330,7 +371,8 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 37.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.43 PM (2).jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.44 PM.jpeg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -343,7 +385,8 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 32.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.01 PM.jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.02 PM.jpeg",
     ],
     badge: "ESSENTIAL",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -357,11 +400,45 @@ export const products: Product[] = [
     price: 34.00,
     salePrice: 24.00,
     images: [
-      "/images/processed/print-tshirt.jpg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.03 PM.jpeg",
+      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.03 PM (1).jpeg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
     desc: "Sleek line-art style streetwear graphic print. Medium weight cotton fabric, loose fit layout, reinforced rib neck ring.",
+  },
+
+  // ── T-SHIRTS & POLOS › Striped T-Shirts ─────────────────────────────────
+  {
+    id: "striped-tee-1",
+    name: "Vintage Striped T-Shirt",
+    mainCategory: "tshirts-polos",
+    category: "striped tshirt",
+    price: 36.00,
+    images: [
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.10 PM.jpeg",
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM (1).jpeg",
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM (2).jpeg"
+    ],
+    badge: "NEW",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "Premium striped t-shirt featuring vibrant multi-color stripes. Medium weight jersey cotton for everyday comfort and durability.",
+  },
+  {
+    id: "striped-tee-2",
+    name: "Nautical Contrast Striped Tee",
+    mainCategory: "tshirts-polos",
+    category: "striped tshirt",
+    price: 38.00,
+    salePrice: 28.00,
+    images: [
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM.jpeg",
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM (1).jpeg",
+      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM (2).jpeg"
+    ],
+    badge: "SALE",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "Nautical inspired contrast striped tee. Crafted with breathable cotton construction and a relaxed fit.",
   },
 
   // ── BOTTOMS › Pants ─────────────────────────────────────────────────────
@@ -372,7 +449,7 @@ export const products: Product[] = [
     category: "pant",
     price: 65.00,
     images: [
-      "/images/processed/pant.jpg",
+      "/images/bottoms/pant/Welter 6 color skater fit.jpeg",
     ],
     badge: "6 COLORS",
     sizes: ["30", "32", "34", "36"],
@@ -385,7 +462,7 @@ export const products: Product[] = [
     category: "pant",
     price: 69.00,
     images: [
-      "/images/processed/pant.jpg",
+      "/images/bottoms/pant/Jawa 3 color.jpeg",
     ],
     badge: "BESTSELLER",
     sizes: ["30", "32", "34", "36"],
@@ -398,7 +475,7 @@ export const products: Product[] = [
     category: "pant",
     price: 62.00,
     images: [
-      "/images/processed/pant.jpg",
+      "/images/bottoms/pant/Dylez 3 color.jpeg",
     ],
     badge: "NEW",
     sizes: ["30", "32", "34", "36"],
@@ -413,7 +490,7 @@ export const products: Product[] = [
     category: "blazer",
     price: 95.00,
     images: [
-      "/images/processed/blazer.jpg",
+      "/images/formal-wear/blazer/blazer for main.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
@@ -428,7 +505,7 @@ export const products: Product[] = [
     category: "chef uniform",
     price: 45.00,
     images: [
-      "/images/processed/chef-uniform.jpg",
+      "/images/workwear-uniforms/chef uniform.png",
     ],
     badge: "DURABLE",
     sizes: ["M", "L", "XL", "XXL"],
@@ -441,7 +518,7 @@ export const products: Product[] = [
     category: "corporate uniform",
     price: 39.00,
     images: [
-      "/images/processed/corporate-uniform.jpg",
+      "/images/workwear-uniforms/Corperate main.png",
     ],
     badge: "OFFICE",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -454,7 +531,7 @@ export const products: Product[] = [
     category: "medical uniform",
     price: 29.00,
     images: [
-      "/images/processed/medical-uniform.jpg",
+      "/images/workwear-uniforms/doctor uniform.png",
     ],
     badge: "HYGIENE",
     sizes: ["S", "M", "L", "XL"],
@@ -467,7 +544,7 @@ export const products: Product[] = [
     category: "safety uniform",
     price: 59.00,
     images: [
-      "/images/processed/safety-uniform.jpg",
+      "/images/workwear-uniforms/safety uniform.png",
     ],
     badge: "SAFETY",
     sizes: ["M", "L", "XL", "XXL"],
@@ -480,7 +557,7 @@ export const products: Product[] = [
     category: "uniform tshirt",
     price: 19.00,
     images: [
-      "/images/processed/uniform-tshirt.jpg",
+      "/images/workwear-uniforms/tshirt uniform.png",
     ],
     badge: "UTILITY",
     sizes: ["S", "M", "L", "XL", "XXL"],
