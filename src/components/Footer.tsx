@@ -50,6 +50,17 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               <a href="#" aria-label="TikTok"><i className="fa-brands fa-tiktok"></i></a>
               <a href="#" aria-label="Pinterest"><i className="fa-brands fa-pinterest"></i></a>
             </div>
+            <div className="footer-emblems-row">
+              <span className="footer-emblems-title">Alternative Marks</span>
+              <div className="footer-emblems-list">
+                <div className="footer-emblem-wrapper" title="Uniform Crown Logo">
+                  <img src="/logo 2.png" alt="Uniform Crown" className="footer-emblem-img emblem-logo2" />
+                </div>
+                <div className="footer-emblem-wrapper" title="Streetwear Crest Logo">
+                  <img src="/logo 3.png" alt="Streetwear Crest" className="footer-emblem-img emblem-logo3" />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="footer-col">

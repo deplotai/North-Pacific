@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reels from "@/components/Reels";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   const {
@@ -19,6 +20,9 @@ export default function Home() {
     executeCheckout,
     clearCart,
   } = useCart();
+
+  // Preloader State
+  const [loading, setLoading] = useState(true);
 
   // Products and Offers dynamic state (synced with localStorage)
   const [productsList, setProductsList] = useState<Product[]>(products);
@@ -269,19 +273,27 @@ export default function Home() {
     }
   };
 
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    const element = document.getElementById(`category-group-${category}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      const section = document.querySelector("#products-section");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleCategoryNav = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>, category: string) => {
     e.preventDefault();
     e.stopPropagation();
-    setActiveCategory(category);
-    const element = document.querySelector("#products-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    handleCategoryClick(category);
   };
 
   return (
     <>
-      <Header onSelectCategory={setActiveCategory} />
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      <Header onSelectCategory={handleCategoryClick} />
 
       {/* Hero Section */}
       <section className="hero-section" id="hero-section">
@@ -297,7 +309,20 @@ export default function Home() {
           alt="North Pacific Hero Mobile"
           className="hero-img hero-img-mobile"
         />
+      </section>
 
+      {/* Hero Promo Section */}
+      <section className="hero-promo-section">
+        <img
+          src="/Website image/after hero desktop.png"
+          alt="North Pacific Promo Desktop"
+          className="promo-img promo-img-desktop"
+        />
+        <img
+          src="/Website image/after hero.png"
+          alt="North Pacific Promo Mobile"
+          className="promo-img promo-img-mobile"
+        />
       </section>
 
 
@@ -484,16 +509,39 @@ export default function Home() {
       <section id="products-section" className="products-section section-padding">
         <div className="section-container">
           <div className="section-header center-align">
-            <div className="section-title-wrap">
-              <h2 className="section-title">THE CATALOGUE</h2>
+            <div className="catalogue-title-container">
+              {/* Left side brand (Logo 2) */}
+              <div className="catalogue-side-brand left-side">
+                <img src="/logo 2.png" alt="Uniform Crown" className="side-brand-img" />
+                <div className="side-brand-info">
+                  <span className="side-brand-label">EST. UNIFORMS</span>
+                  <span className="side-brand-desc">FORMAL & WORKWEAR</span>
+                </div>
+              </div>
+
+              <div className="section-title-wrap">
+                <h2 className="section-title">THE CATALOGUE</h2>
+              </div>
+
+              {/* Right side brand (Logo 3) */}
+              <div className="catalogue-side-brand right-side">
+                <img src="/logo 3.png" alt="Streetwear Crest" className="side-brand-img" />
+                <div className="side-brand-info">
+                  <span className="side-brand-label">STREETWEAR</span>
+                  <span className="side-brand-desc">GRAPHICS & POLOS</span>
+                </div>
+              </div>
             </div>
+            
             {/* Category Filter — Main categories + Sub-category pills */}
             <div className="filter-tabs-container">
               {/* ALL button */}
               <div className="filter-main-row">
                 <button
                   className={`filter-tab filter-tab-main ${activeCategory === "all" ? "active" : ""}`}
-                  onClick={() => setActiveCategory("all")}
+                  onClick={() => {
+                    setActiveCategory("all");
+                  }}
                 >
                   ALL
                 </button>
@@ -523,7 +571,9 @@ export default function Home() {
                       <button
                         key={sub.id}
                         className={`filter-tab filter-tab-sub ${activeCategory === sub.id ? "active" : ""}`}
-                        onClick={() => setActiveCategory(sub.id)}
+                        onClick={() => {
+                          setActiveCategory(sub.id);
+                        }}
                       >
                         {sub.label.toUpperCase()}
                       </button>
@@ -552,14 +602,13 @@ export default function Home() {
               filteredProducts.map((product) => {
                 const hasSale = product.salePrice !== undefined;
                 const mainImg = product.images[0] ?? "";
-                const hoverImg = product.images[1] ?? mainImg;
                 const displayPrice = product.price;
                 const displaySalePrice = product.salePrice ?? null;
-                const selectedSize = selectedSizes[product.id];
 
                 return (
                   <div key={product.id} className="product-card reveal-on-scroll" data-id={product.id}>
                     <div className="product-image-wrap">
+                      {/* Product Image */}
                       <img
                         src={mainImg}
                         alt={product.name}
@@ -567,23 +616,10 @@ export default function Home() {
                         loading="lazy"
                         onClick={() => handleOpenQuickView(product.id)}
                       />
-                      <img
-                        src={hoverImg}
-                        alt={product.name}
-                        className="product-img img-hover"
-                        loading="lazy"
-                        onClick={() => handleOpenQuickView(product.id)}
-                      />
 
                       <button className="card-bookmark-btn" aria-label="Bookmark product">
                         <i className="fa-regular fa-bookmark"></i>
                       </button>
-
-                      <div className="card-slider-dots">
-                        <span className="dot active"></span>
-                        <span className="dot"></span>
-                        <span className="dot"></span>
-                      </div>
 
                       <div className="product-badges">
                         {product.badge && (
@@ -1038,7 +1074,7 @@ export default function Home() {
         </div>
       )}
 
-      <Footer onSelectCategory={setActiveCategory} />
+      <Footer onSelectCategory={handleCategoryClick} />
     </>
   );
 }

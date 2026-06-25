@@ -95,8 +95,7 @@ export const products: Product[] = [
     category: "linen shirt",
     price: 45.00,
     images: [
-      "/images/shirts/linen shirt/WhatsApp Image 2026-06-22 at 3.06.29 PM.jpeg",
-      "/pose/WhatsApp Image 2026-06-23 at 5.23.51 PM.jpeg",
+      "/images/processed/linen-shirt.jpg",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
@@ -112,8 +111,7 @@ export const products: Product[] = [
     price: 49.00,
     salePrice: 39.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.17 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.17 PM (1).jpeg",
+      "/images/processed/printed-shirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -126,8 +124,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 52.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM (1).jpeg",
+      "/images/processed/printed-shirt.jpg",
     ],
     badge: "HOT",
     sizes: ["S", "M", "L", "XL"],
@@ -140,8 +137,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 50.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM (1).jpeg",
+      "/images/processed/printed-shirt.jpg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -154,8 +150,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 48.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM (1).jpeg",
+      "/images/processed/printed-shirt.jpg",
     ],
     badge: "",
     sizes: ["M", "L", "XL"],
@@ -169,8 +164,7 @@ export const products: Product[] = [
     price: 52.00,
     salePrice: 42.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM (1).jpeg",
+      "/images/processed/printed-shirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -185,8 +179,7 @@ export const products: Product[] = [
     category: "striped shirt",
     price: 35.00,
     images: [
-      "/images/shirts/striped shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM.jpeg",
-      "/images/shirts/striped shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM (1).jpeg",
+      "/images/processed/striped-shirt.jpg",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
@@ -200,8 +193,7 @@ export const products: Product[] = [
     price: 36.00,
     salePrice: 26.00,
     images: [
-      "/images/shirts/striped shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM.jpeg",
-      "/images/shirts/striped shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM (1).jpeg",
+      "/images/processed/striped-shirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -217,8 +209,7 @@ export const products: Product[] = [
     price: 39.00,
     salePrice: 29.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.21 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.21 PM (1).jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -231,8 +222,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 42.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM (1).jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "ESSENTIAL",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -245,8 +235,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 40.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM (1).jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -260,8 +249,7 @@ export const products: Product[] = [
     price: 45.00,
     salePrice: 35.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM (1).jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -274,8 +262,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 44.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM (1).jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "NEW",
     sizes: ["M", "L", "XL", "XXL"],
@@ -288,8 +275,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 38.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.20 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.23 PM.jpeg",
+      "/images/processed/polo-tshirt.jpg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -304,8 +290,7 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 35.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-17 at 1.38.09 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-17 at 1.38.09 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "POPULAR",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -319,8 +304,7 @@ export const products: Product[] = [
     price: 38.00,
     salePrice: 28.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-17 at 1.38.10 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-17 at 1.38.10 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -333,8 +317,7 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 36.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.42 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.42 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "",
     sizes: ["M", "L", "XL"],
@@ -347,8 +330,7 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 37.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.43 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.06.43 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -361,8 +343,7 @@ export const products: Product[] = [
     category: "print tshirt",
     price: 32.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.02 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.02 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "ESSENTIAL",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -376,8 +357,7 @@ export const products: Product[] = [
     price: 34.00,
     salePrice: 24.00,
     images: [
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.03 PM.jpeg",
-      "/images/tshirts-polos/print tshirt/WhatsApp Image 2026-06-22 at 3.07.03 PM (1).jpeg",
+      "/images/processed/print-tshirt.jpg",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -392,8 +372,7 @@ export const products: Product[] = [
     category: "pant",
     price: 65.00,
     images: [
-      "/images/bottoms/pant/Welter 6 color skater fit.jpeg",
-      "/pose/WhatsApp Image 2026-06-23 at 5.23.52 PM.jpeg",
+      "/images/processed/pant.jpg",
     ],
     badge: "6 COLORS",
     sizes: ["30", "32", "34", "36"],
@@ -406,8 +385,7 @@ export const products: Product[] = [
     category: "pant",
     price: 69.00,
     images: [
-      "/images/bottoms/pant/Jawa 3 color.jpeg",
-      "/pose/WhatsApp Image 2026-06-23 at 5.23.53 PM.jpeg",
+      "/images/processed/pant.jpg",
     ],
     badge: "BESTSELLER",
     sizes: ["30", "32", "34", "36"],
@@ -420,11 +398,92 @@ export const products: Product[] = [
     category: "pant",
     price: 62.00,
     images: [
-      "/images/bottoms/pant/Dylez 3 color.jpeg",
-      "/pose/WhatsApp Image 2026-06-23 at 5.23.54 PM.jpeg",
+      "/images/processed/pant.jpg",
     ],
     badge: "NEW",
     sizes: ["30", "32", "34", "36"],
     desc: "Classic 90s skater fit wide-leg jeans with vintage washed wash. Embellished with custom hardware and heavy contrast stitching.",
+  },
+
+  // ── FORMAL WEAR › Blazers ───────────────────────────────────────────────
+  {
+    id: "formal-blazer-1",
+    name: "Signature Tailored Blazer",
+    mainCategory: "formal-wear",
+    category: "blazer",
+    price: 95.00,
+    images: [
+      "/images/processed/blazer.jpg",
+    ],
+    badge: "PREMIUM",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "A modern tailored blazer crafted from a high-quality wool blend. Soft shoulders, notched lapels, and a contemporary unstructured drape.",
+  },
+
+  // ── WORKWEAR & UNIFORMS ───────────────────────────────────────────────
+  {
+    id: "workwear-chef-1",
+    name: "Executive Chef Jacket",
+    mainCategory: "workwear-uniforms",
+    category: "chef uniform",
+    price: 45.00,
+    images: [
+      "/images/processed/chef-uniform.jpg",
+    ],
+    badge: "DURABLE",
+    sizes: ["M", "L", "XL", "XXL"],
+    desc: "Professional chef uniform designed for comfort and ventilation in high-heat environments. Double-breasted with breathable side panels.",
+  },
+  {
+    id: "workwear-corporate-1",
+    name: "Premium Corporate Oxford Shirt",
+    mainCategory: "workwear-uniforms",
+    category: "corporate uniform",
+    price: 39.00,
+    images: [
+      "/images/processed/corporate-uniform.jpg",
+    ],
+    badge: "OFFICE",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    desc: "Sleek, wrinkle-resistant corporate oxford shirt. Perfect for team uniforms and formal corporate branding.",
+  },
+  {
+    id: "workwear-doctor-1",
+    name: "Medical Scrubs V-Neck Top",
+    mainCategory: "workwear-uniforms",
+    category: "medical uniform",
+    price: 29.00,
+    images: [
+      "/images/processed/medical-uniform.jpg",
+    ],
+    badge: "HYGIENE",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "Antimicrobial, moisture-wicking scrub top. Features four-way stretch fabric and utility pocket storage.",
+  },
+  {
+    id: "workwear-safety-1",
+    name: "High-Visibility Safety Parka",
+    mainCategory: "workwear-uniforms",
+    category: "safety uniform",
+    price: 59.00,
+    images: [
+      "/images/processed/safety-uniform.jpg",
+    ],
+    badge: "SAFETY",
+    sizes: ["M", "L", "XL", "XXL"],
+    desc: "Reflective high-visibility safety jacket designed to meet occupational standards. Windproof, waterproof, and highly durable.",
+  },
+  {
+    id: "workwear-tshirt-1",
+    name: "Heavy-Duty Staff Uniform Tee",
+    mainCategory: "workwear-uniforms",
+    category: "uniform tshirt",
+    price: 19.00,
+    images: [
+      "/images/processed/uniform-tshirt.jpg",
+    ],
+    badge: "UTILITY",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    desc: "Reinforced stitching staff uniform t-shirt. Shrink-resistant cotton built for daily washing and high durability.",
   },
 ];

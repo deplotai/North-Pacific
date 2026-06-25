@@ -61,13 +61,6 @@ export default function Header({ onSelectCategory }: HeaderProps) {
           </button>
           <nav className="desktop-nav">
             <a
-              href="#products-section"
-              className="nav-link"
-              onClick={(e) => handleNavClick(e, "#products-section")}
-            >
-              Shop
-            </a>
-            <a
               href="#offers-section"
               className="nav-link"
               onClick={(e) => handleNavClick(e, "#offers-section")}
@@ -147,8 +140,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
         onClick={() => setIsSidebarOpen(false)}
       ></div>
       <aside className={`mobile-sidebar ${isSidebarOpen ? "active" : ""}`}>
-        <div className="sidebar-header">
-          <span className="sidebar-title">SHOP</span>
+        <div className="sidebar-header" style={{ justifyContent: "flex-end" }}>
           <button
             className="sidebar-close"
             aria-label="Close Menu"
