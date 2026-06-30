@@ -314,12 +314,12 @@ export default function Home() {
       {/* Hero Promo Section */}
       <section className="hero-promo-section">
         <img
-          src="/Website image/after hero desktop.png"
+          src="/Website image/ChatGPT Image Jun 30, 2026, 12_41_07 PM.png"
           alt="North Pacific Promo Desktop"
           className="promo-img promo-img-desktop"
         />
         <img
-          src="/Website image/after hero.png"
+          src="/Website image/ChatGPT Image Jun 30, 2026, 12_42_04 PM.png"
           alt="North Pacific Promo Mobile"
           className="promo-img promo-img-mobile"
         />

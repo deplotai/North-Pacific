@@ -3126,16 +3126,16 @@ button {
     padding: 0;
     margin: 0;
     line-height: 0;
-    max-height: 65vh;
+    max-height: none;
     overflow: hidden;
 }
 
 .hero-promo-section .promo-img {
     width: 100%;
-    height: 65vh;
+    height: auto;
     display: block;
     object-fit: cover;
-    object-position: top center;
+    object-position: center;
 }
 
 .hero-promo-section .promo-img-desktop {
@@ -3148,11 +3148,11 @@ button {
 
 @media (max-width: 768px) {
     .hero-promo-section {
-        max-height: 250px;
+        max-height: none;
     }
 
     .hero-promo-section .promo-img {
-        height: 250px;
+        height: auto;
     }
 
     .hero-promo-section .promo-img-desktop {
