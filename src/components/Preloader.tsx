@@ -17,9 +17,10 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       "/logo.png",
       "/logo 2.png",
       "/logo 3.png",
-      "/Website image/Hero section desktop.png",
-      "/Website image/Hero section mobile.png",
-      "/images/mobile-hero-promo.png",
+      "/Website image/hero desktop.png",
+      "/Website image/hero mobile.png",
+      "/Website image/after hero desktop.png",
+      "/Website image/after hero mobile.png",
       "/images/shirts/linen shirt for main.png",
       "/images/shirts/Printed shirt for main.png",
       "/images/shirts/Striped shirt for main.png",
@@ -86,8 +87,6 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         <div className="preloader-logo-wrap">
           <img src="/logo.png" alt="North Pacific Logo" className="preloader-logo" />
         </div>
-        <h1 className="preloader-title">NORTH PACIFIC</h1>
-        <p className="preloader-subtitle">EST. 2026 • STREETWEAR & UNIFORMS</p>
         
         <div className="preloader-progress-track">
           <div className="preloader-progress-fill" style={{ width: `${progress}%` }}></div>
@@ -95,8 +94,12 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         
         <div className="preloader-meta">
           <span className="preloader-percentage">{progress}%</span>
-          <span className="preloader-loading-text">LOADING ASSETS...</span>
         </div>
+      </div>
+      <div className="preloader-legal">
+        <a href="#cookies" className="legal-link">Cookies Policy</a>
+        <span className="legal-divider">|</span>
+        <a href="#privacy" className="legal-link">Privacy Terms</a>
       </div>
     </div>
   );

@@ -33,31 +33,27 @@ export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
   const [fadeTrigger, setFadeTrigger] = useState(true);
 
-  // Shirts Featured Grid slideshow state
-  const [activeShirtImageIdx, setActiveShirtImageIdx] = useState(0);
+  // Shirts Featured Grid images
   const shirtImages = [
     "/images/shirts/linen shirt for main.png",
     "/images/shirts/Printed shirt for main.png",
     "/images/shirts/Striped shirt for main.png"
   ];
 
-  // T-Shirts & Polos Featured Grid slideshow state
-  const [activeTshirtImageIdx, setActiveTshirtImageIdx] = useState(0);
+  // T-Shirts & Polos Featured Grid images
   const tshirtImages = [
     "/images/tshirts-polos/polo tshirt for main.png",
     "/images/tshirts-polos/print tshirt for main.png",
     "/images/tshirts-polos/striped tshirt for main.png"
   ];
 
-  // Bottoms Featured Grid slideshow state
-  const [activeBottomImageIdx, setActiveBottomImageIdx] = useState(0);
+  // Bottoms Featured Grid images
   const bottomImages = [
     "/images/bottoms/formal trouser for main.png",
     "/images/bottoms/pant for main section.png"
   ];
 
-  // Workwear & Uniforms Featured Grid slideshow state
-  const [activeUniformImageIdx, setActiveUniformImageIdx] = useState(0);
+  // Workwear & Uniforms Featured Grid images
   const uniformImages = [
     "/images/workwear-uniforms/chef uniform.png",
     "/images/workwear-uniforms/Corperate main.png",
@@ -65,27 +61,6 @@ export default function Home() {
     "/images/workwear-uniforms/safety uniform.png",
     "/images/workwear-uniforms/tshirt uniform.png"
   ];
-
-  useEffect(() => {
-    const shirtInterval = setInterval(() => {
-      setActiveShirtImageIdx((prev) => (prev + 1) % 3);
-    }, 3000);
-    const tshirtInterval = setInterval(() => {
-      setActiveTshirtImageIdx((prev) => (prev + 1) % 3);
-    }, 3000);
-    const bottomInterval = setInterval(() => {
-      setActiveBottomImageIdx((prev) => (prev + 1) % 2);
-    }, 3000);
-    const uniformInterval = setInterval(() => {
-      setActiveUniformImageIdx((prev) => (prev + 1) % 5);
-    }, 3000);
-    return () => {
-      clearInterval(shirtInterval);
-      clearInterval(tshirtInterval);
-      clearInterval(bottomInterval);
-      clearInterval(uniformInterval);
-    };
-  }, []);
 
   // Quick View Modal state
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
@@ -299,13 +274,13 @@ export default function Home() {
       <section className="hero-section" id="hero-section">
         {/* Full hero image (desktop) */}
         <img
-          src="/Website image/Hero section desktop.png"
+          src="/Website image/hero desktop.png"
           alt="North Pacific Hero Desktop"
           className="hero-img hero-img-desktop"
         />
         {/* Full hero image (mobile) */}
         <img
-          src="/Website image/Hero section mobile.png"
+          src="/Website image/hero mobile.png"
           alt="North Pacific Hero Mobile"
           className="hero-img hero-img-mobile"
         />
@@ -314,12 +289,12 @@ export default function Home() {
       {/* Hero Promo Section */}
       <section className="hero-promo-section">
         <img
-          src="/Website image/ChatGPT Image Jun 30, 2026, 12_41_07 PM.png"
+          src="/Website image/after hero desktop.png"
           alt="North Pacific Promo Desktop"
           className="promo-img promo-img-desktop"
         />
         <img
-          src="/Website image/ChatGPT Image Jun 30, 2026, 12_42_04 PM.png"
+          src="/Website image/after hero mobile.png"
           alt="North Pacific Promo Mobile"
           className="promo-img promo-img-mobile"
         />
@@ -337,19 +312,8 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              {shirtImages.map((src, idx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Shirts ${idx + 1}`}
-                  className="category-card-img"
-                  style={{
-                    opacity: activeShirtImageIdx === idx ? 1 : 0,
-                    transition: "opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                    zIndex: activeShirtImageIdx === idx ? 2 : 1,
-                  }}
-                />
-              ))}
+              <img src={shirtImages[0]} alt="Shirts 1" className="category-card-img img-default" />
+              {shirtImages[1] && <img src={shirtImages[1]} alt="Shirts 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">SHIRTS</h3>
@@ -364,19 +328,8 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              {tshirtImages.map((src, idx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`T-Shirts & Polos ${idx + 1}`}
-                  className="category-card-img"
-                  style={{
-                    opacity: activeTshirtImageIdx === idx ? 1 : 0,
-                    transition: "opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                    zIndex: activeTshirtImageIdx === idx ? 2 : 1,
-                  }}
-                />
-              ))}
+              <img src={tshirtImages[0]} alt="T-Shirts & Polos 1" className="category-card-img img-default" />
+              {tshirtImages[1] && <img src={tshirtImages[1]} alt="T-Shirts & Polos 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">T-SHIRTS &amp; POLOS</h3>
@@ -391,19 +344,8 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              {bottomImages.map((src, idx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Bottoms ${idx + 1}`}
-                  className="category-card-img"
-                  style={{
-                    opacity: activeBottomImageIdx === idx ? 1 : 0,
-                    transition: "opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                    zIndex: activeBottomImageIdx === idx ? 2 : 1,
-                  }}
-                />
-              ))}
+              <img src={bottomImages[0]} alt="Bottoms 1" className="category-card-img img-default" />
+              {bottomImages[1] && <img src={bottomImages[1]} alt="Bottoms 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">BOTTOMS</h3>
@@ -417,8 +359,8 @@ export default function Home() {
               <span className="cat-num">04</span>
               <span className="cat-arrow">↗</span>
             </div>
-            <div className="category-card-image-wrap">
-              <img src="/images/formal-wear/blazer/blazer for main.png" alt="Formal Wear" className="category-card-img" />
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src="/images/formal-wear/blazer for main.png" alt="Formal Wear" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">FORMAL WEAR</h3>
@@ -433,19 +375,8 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              {uniformImages.map((src, idx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Workwear & Uniforms ${idx + 1}`}
-                  className="category-card-img"
-                  style={{
-                    opacity: activeUniformImageIdx === idx ? 1 : 0,
-                    transition: "opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                    zIndex: activeUniformImageIdx === idx ? 2 : 1,
-                  }}
-                />
-              ))}
+              <img src={uniformImages[0]} alt="Workwear & Uniforms 1" className="category-card-img img-default" />
+              {uniformImages[1] && <img src={uniformImages[1]} alt="Workwear & Uniforms 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">WORKWEAR &amp; UNIFORMS</h3>
@@ -600,21 +531,20 @@ export default function Home() {
               </div>
             ) : (
               filteredProducts.map((product) => {
-                const hasSale = product.salePrice !== undefined;
                 const mainImg = product.images[0] ?? "";
-                const displayPrice = product.price;
-                const displaySalePrice = product.salePrice ?? null;
 
                 return (
                   <div key={product.id} className="product-card reveal-on-scroll" data-id={product.id}>
-                    <div className="product-image-wrap">
+                    <div className="product-image-wrap" onClick={() => handleOpenQuickView(product.id)}>
+                      {/* Individual Watermark Background */}
+                      <img src="/logo 3.png" alt="Watermark" className="card-watermark" />
+                      
                       {/* Product Image */}
                       <img
                         src={mainImg}
                         alt={product.name}
                         className="product-img img-default"
                         loading="lazy"
-                        onClick={() => handleOpenQuickView(product.id)}
                       />
                       {product.images.length > 1 && (
                         <img
@@ -622,56 +552,20 @@ export default function Home() {
                           alt={`${product.name} alternate view`}
                           className="product-img img-hover"
                           loading="lazy"
-                          onClick={() => handleOpenQuickView(product.id)}
                         />
                       )}
-
-                      <button className="card-bookmark-btn" aria-label="Bookmark product">
-                        <i className="fa-regular fa-bookmark"></i>
-                      </button>
-
-                      <div className="product-badges">
-                        {product.badge && (
-                          <span
-                            className={`badge-tag ${
-                              product.badge.toLowerCase() === "sale" ? "sale" : "new"
-                            }`}
-                          >
-                            {product.badge}
-                          </span>
-                        )}
-                      </div>
                     </div>
-                    <div className="product-info">
-                      <div className="product-meta-left">
-                        <a
-                          href="#"
-                          className="product-name-link"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleOpenQuickView(product.id);
-                          }}
-                        >
-                          {product.name}
-                        </a>
-                        <div className="product-price-row">
-                          {hasSale && displaySalePrice ? (
-                            <>
-                              <span className="price-sale">${displaySalePrice.toFixed(2)}</span>
-                              <span className="price-old">${displayPrice.toFixed(2)}</span>
-                            </>
-                          ) : (
-                            <span className="price-regular">${displayPrice.toFixed(2)}</span>
-                          )}
-                        </div>
-                      </div>
-                      <button
-                        className="product-card-plus-btn"
-                        aria-label="Quick View"
-                        onClick={() => handleOpenQuickView(product.id)}
+                    <div className="product-info-minimal">
+                      <a
+                        href="#"
+                        className="product-name-link-minimal"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleOpenQuickView(product.id);
+                        }}
                       >
-                        <i className="fa-solid fa-plus"></i>
-                      </button>
+                        {product.name}
+                      </a>
                     </div>
                   </div>
                 );

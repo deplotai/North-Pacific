@@ -17,6 +17,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "NORTH PACIFIC | Premium Streetwear",
   description: "Premium streetwear and apparel by North Pacific. Order direct via WhatsApp.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 import { CartProvider } from "@/context/CartContext";

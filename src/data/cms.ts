@@ -26,9 +26,11 @@ export const CATEGORY_TREE = [
     label: "Shirts",
     icon: "fa-solid fa-shirt",
     subs: [
-      { id: "linen shirt",   label: "Linen Shirts" },
-      { id: "printed shirt", label: "Printed Shirts" },
-      { id: "striped shirt", label: "Striped Shirts" },
+      { id: "linen shirt",   label: "Linen" },
+      { id: "oxford shirt",  label: "Oxford" },
+      { id: "formal shirt",  label: "Formal" },
+      { id: "cuban collar shirt", label: "Cuban Collar" },
+      { id: "printed shirt", label: "Printed" },
     ],
   },
   {
@@ -36,10 +38,11 @@ export const CATEGORY_TREE = [
     label: "T-Shirts & Polos",
     icon: "fa-solid fa-tshirt",
     subs: [
-      { id: "polo tshirt",    label: "Polo T-Shirts" },
-      { id: "print tshirt",   label: "Printed T-Shirts" },
-      { id: "striped tshirt", label: "Striped T-Shirts" },
-      { id: "uniform tshirt", label: "Uniform T-Shirts" },
+      { id: "oversized tshirt", label: "Oversized" },
+      { id: "polo tshirt",      label: "Polo" },
+      { id: "plain essentials", label: "Plain Essentials" },
+      { id: "graphic tshirt",   label: "Graphic" },
+      { id: "striped tshirt",   label: "Striped" },
     ],
   },
   {
@@ -47,8 +50,15 @@ export const CATEGORY_TREE = [
     label: "Bottoms",
     icon: "fa-solid fa-socks",
     subs: [
-      { id: "pant",            label: "Pants" },
-      { id: "formal trouser",  label: "Formal Trousers" },
+      { id: "pants formal",       label: "Formal Pants" },
+      { id: "pants chinos",       label: "Chinos" },
+      { id: "pants smart casual", label: "Smart Casual Pants" },
+      { id: "pants linen",        label: "Linen Pants" },
+      { id: "pants pleated",      label: "Pleated Pants" },
+      { id: "jeans straight",     label: "Straight Fit Jeans" },
+      { id: "jeans relaxed",      label: "Relaxed Jeans" },
+      { id: "jeans wide leg",     label: "Wide Leg Jeans" },
+      { id: "black denim",        label: "Black Denim" },
     ],
   },
   {
@@ -56,7 +66,9 @@ export const CATEGORY_TREE = [
     label: "Formal Wear",
     icon: "fa-solid fa-user-tie",
     subs: [
-      { id: "blazer", label: "Blazers" },
+      { id: "blazer business",     label: "Business" },
+      { id: "blazer linen",        label: "Linen" },
+      { id: "blazer smart casual", label: "Smart Casual" },
     ],
   },
   {
@@ -64,11 +76,11 @@ export const CATEGORY_TREE = [
     label: "Workwear & Uniforms",
     icon: "fa-solid fa-hard-hat",
     subs: [
-      { id: "uniform tshirt",    label: "Uniform T-Shirts" },
-      { id: "corporate uniform", label: "Corporate Uniform" },
-      { id: "medical uniform",   label: "Medical Uniform" },
-      { id: "chef uniform",      label: "Chef Uniform" },
-      { id: "safety uniform",    label: "Safety Uniform" },
+      { id: "corporate uniform",  label: "Corporate" },
+      { id: "medical uniform",    label: "Medical" },
+      { id: "chef uniform",       label: "Chef" },
+      { id: "industrial uniform", label: "Industrial" },
+      { id: "safety uniform",     label: "Safety" },
     ],
   },
   {
@@ -91,12 +103,12 @@ export const products: Product[] = [
   // ── SHIRTS › Linen Shirts ───────────────────────────────────────────────
   {
     id: "linen-shirt-1",
-    name: "Premium Linen Beige Shirt",
+    name: "Premium Linen Olive Shirt",
     mainCategory: "shirts",
     category: "linen shirt",
     price: 45.00,
     images: [
-      "/images/shirts/linen shirt/linen_1.png",
+      "/images/shirts/Linen/linen_shirt_1.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
@@ -488,9 +500,9 @@ export const products: Product[] = [
     name: "Signature Tailored Blazer",
     mainCategory: "formal-wear",
     category: "blazer",
-    price: 95.00,
+    price: 180.00,
     images: [
-      "/images/formal-wear/blazer/blazer for main.png",
+      "/images/formal-wear/blazer for main.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],

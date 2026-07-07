@@ -76,7 +76,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
             </a>
             <div className="nav-dropdown-container">
               <button className="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                Brochures <i className="fa-solid fa-chevron-down" style={{ fontSize: "8px" }}></i>
+                Brochures
               </button>
               <div className="nav-dropdown-menu">
                 <a
@@ -85,7 +85,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                   rel="noopener noreferrer"
                   className="dropdown-item"
                 >
-                  <i className="fa-solid fa-shirt"></i> Streetwear Catalogue
+                  Streetwear Catalogue
                 </a>
                 <a
                   href="/brochures/uniform.pdf"
@@ -93,7 +93,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                   rel="noopener noreferrer"
                   className="dropdown-item"
                 >
-                  <i className="fa-solid fa-user-tie"></i> Corporate Uniforms
+                  Corporate Uniforms
                 </a>
               </div>
             </div>
