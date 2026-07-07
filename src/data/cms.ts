@@ -114,6 +114,20 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     desc: "Crafted from 100% organic linen, this shirt offers unparalleled breathability and a relaxed fit. Garment-dyed for rich color and softness.",
   },
+  // ── SHIRTS › Formal Shirts ───────────────────────────────────────────────
+  {
+    id: "formal-shirt-1",
+    name: "Classic Formal White Shirt",
+    mainCategory: "shirts",
+    category: "formal shirt",
+    price: 55.00,
+    images: [
+      "/images/shirts/Formal/formal_shirt_1.png",
+    ],
+    badge: "NEW",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "A sharp, tailored fit formal shirt crafted from premium cotton blend. Perfect for business meetings and evening wear.",
+  },
   {
     id: "linen-shirt-2",
     name: "Premium Linen Blue Shirt",
