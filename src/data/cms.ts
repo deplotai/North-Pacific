@@ -128,6 +128,34 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     desc: "A sharp, tailored fit formal shirt crafted from premium cotton blend. Perfect for business meetings and evening wear.",
   },
+  // ── SHIRTS › Oxford Shirts ───────────────────────────────────────────────
+  {
+    id: "oxford-shirt-1",
+    name: "Classic Oxford Cotton Shirt",
+    mainCategory: "shirts",
+    category: "oxford shirt",
+    price: 49.00,
+    images: [
+      "/images/shirts/Oxford/oxford_shirt_1.png",
+    ],
+    badge: "NEW",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "A timeless Oxford shirt made from durable, heavyweight cotton. Features a button-down collar and a versatile tailored fit.",
+  },
+  // ── SHIRTS › Cuban Collar Shirts ──────────────────────────────────────
+  {
+    id: "cuban-collar-shirt-1",
+    name: "Relaxed Cuban Collar Resort Shirt",
+    mainCategory: "shirts",
+    category: "cuban collar shirt",
+    price: 52.00,
+    images: [
+      "/images/shirts/Cuban Collar/cuban_collar_1.png",
+    ],
+    badge: "TRENDING",
+    sizes: ["S", "M", "L", "XL"],
+    desc: "A relaxed, stylish resort shirt with a vintage Cuban collar. Cut from a fluid fabric that drapes effortlessly for summer days.",
+  },
   {
     id: "linen-shirt-2",
     name: "Premium Linen Blue Shirt",
