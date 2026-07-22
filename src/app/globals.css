@@ -39,8 +39,7 @@ html {
     background-image: url('/images/zedior_background.png');
     background-size: 100vw auto;
     background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-position: top center;
     color: var(--color-black);
     font-family: var(--font-primary);
     -webkit-font-smoothing: antialiased;
