@@ -11,10 +11,9 @@
     --color-white: #FFFFFF;
     
     /* Typography using Next.js Google Fonts */
-    --font-primary: var(--font-geometric);
-    --font-heading: var(--font-geometric);
-    --font-serif: var(--font-geometric);
-    --font-geometric: var(--font-dmsans), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-primary: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-heading: var(--font-playfair), Georgia, serif;
+    --font-serif: var(--font-playfair), Georgia, serif;
     
     /* Layout & Transition spacing */
     --border-width: 1px;
