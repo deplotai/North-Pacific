@@ -821,18 +821,7 @@ export default function Home() {
         </div>
       </aside>
 
-      {/* Floating WhatsApp Action Button */}
-      <a
-        href="https://wa.me/966500000000?text=Hello%20North%20Pacific!%20I'm%20visiting%20your%20website%20and%20have%20a%20question."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="floating-whatsapp-btn"
-        id="floating-whatsapp-btn"
-        aria-label="Chat on WhatsApp"
-      >
-        <i className="fa-brands fa-whatsapp"></i>
-        <span className="floating-tooltip">Chat with us</span>
-      </a>
+
 
       {/* Product Quick View Modal */}
       {quickViewProduct && (
