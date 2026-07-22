@@ -35,7 +35,11 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--color-bg-warm);
+    background-color: #d9d0c1; /* Fallback beige color */
+    background-image: url('/images/zedior_background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: var(--color-black);
     font-family: var(--font-primary);
     -webkit-font-smoothing: antialiased;
