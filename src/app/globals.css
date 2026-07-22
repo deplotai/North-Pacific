@@ -885,9 +885,6 @@ button {
     padding-top: 125%; /* 4:5 Aspect Ratio (Tall portrait) */
     overflow: hidden;
     background-color: #D6CEC3; /* Beige background */
-    background-image: url('/images/zedior_background.png');
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2860,6 +2857,15 @@ button {
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+/* Catalogue Section Background */
+.products-section {
+    background-image: url('/images/zedior_background.png');
+    background-size: 100vw auto;
+    background-repeat: repeat;
+    background-position: top center;
+    background-color: var(--color-bg-warm);
 }
 
 /* Symmetrical Side Brands in the Catalogue Header */

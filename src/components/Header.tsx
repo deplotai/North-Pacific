@@ -108,7 +108,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
           >
             <div className="brand-logo">
               <img 
-                src="/images/transparent_logo_only.png" 
+                src="/images/transparent_logo.png" 
                 alt="North Pacific Logo" 
                 className="header-logo-img" 
               />
