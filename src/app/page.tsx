@@ -614,6 +614,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Right Side Offer Products list (Empty as requested) */}
+          <div className="offer-list-right">
+            <div className="offer-list-header">
+              <h4>
+                ACTIVE OFFERS <span className="badge-red">SALE</span>
+              </h4>
+              <p>Direct discount products currently on offer</p>
+            </div>
+            <div className="offer-products-container">
+              {/* No products in offer right now */}
+            </div>
+          </div>
         </div>
       </section>
 
