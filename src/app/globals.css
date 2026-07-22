@@ -37,7 +37,8 @@ html {
     scroll-behavior: smooth;
     background-color: #d9d0c1; /* Fallback beige color */
     background-image: url('/images/zedior_background.png');
-    background-size: cover;
+    background-size: 400px auto;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
     color: var(--color-black);
