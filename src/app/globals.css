@@ -253,13 +253,15 @@ button {
     height: 80px;
     width: auto;
     object-fit: contain;
-    transition: height var(--transition-smooth), filter var(--transition-smooth);
+    mix-blend-mode: screen;
+    transition: height var(--transition-smooth), filter var(--transition-smooth), mix-blend-mode var(--transition-smooth);
 }
 
 
 /* Invert the white signature logo to black and shrink it when header is scrolled (white background) */
 .main-header.scrolled .header-logo-img {
     filter: invert(1);
+    mix-blend-mode: multiply;
     height: 60px;
 }
 
@@ -1173,7 +1175,7 @@ button {
 
 .offers-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--border-width);
 }
 

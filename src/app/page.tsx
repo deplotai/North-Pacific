@@ -567,7 +567,7 @@ export default function Home() {
                     <img
                       src={cat.img}
                       alt={cat.label}
-                      className="product-img img-default"
+                      className="product-img"
                       loading="lazy"
                     />
                   </div>
@@ -612,53 +612,6 @@ export default function Home() {
                   <span className="countdown-label">SECS</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Right Side Offer Products list */}
-          <div className="offer-list-right">
-            <div className="offer-list-header">
-              <h4>
-                ACTIVE OFFERS <span className="badge-red">SALE</span>
-              </h4>
-              <p>Direct discount products currently on offer</p>
-            </div>
-            <div className="offer-products-container">
-              {offerItems.map((item) => {
-                const hasSale = item.salePrice !== undefined;
-                const finalPrice = item.salePrice ?? item.price;
-                const savings = item.price - finalPrice;
-                const mainImg = item.images[0] ?? "";
-
-                return (
-                  <div key={item.id} className="offer-product-row">
-                    <img src={mainImg} alt={item.name} className="offer-prod-img" />
-                    <div className="offer-prod-details">
-                      <span className="offer-prod-name">{item.name}</span>
-                      <div className="offer-prod-price">
-                        {hasSale ? (
-                          <>
-                            <span className="price-sale">${finalPrice.toFixed(2)}</span>
-                            <span className="price-old">${item.price.toFixed(2)}</span>
-                          </>
-                        ) : (
-                          <span className="price-regular">${finalPrice.toFixed(2)}</span>
-                        )}
-                      </div>
-                      {savings > 0 && (
-                        <span className="offer-prod-badge">SAVE ${savings.toFixed(2)}</span>
-                      )}
-                    </div>
-                    <button
-                      className="btn btn-secondary btn-sm"
-                      onClick={() => handleOpenQuickView(item.id)}
-                      style={{ padding: "10px 15px", fontSize: "11px" }}
-                    >
-                      VIEW
-                    </button>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>
