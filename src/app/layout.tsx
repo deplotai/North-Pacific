@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 };
 
 import { CartProvider } from "@/context/CartContext";
+import CookieBanner from "@/components/CookieBanner";
+import SupportWidget from "@/components/SupportWidget";
 
 export default function RootLayout({
   children,
@@ -41,6 +43,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <CartProvider>
           {children}
+          <SupportWidget />
+          <CookieBanner />
         </CartProvider>
       </body>
     </html>
