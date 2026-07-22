@@ -1,14 +1,14 @@
 /* CSS Variables for Palette & Theme */
 :root {
-    --color-navy: #072049;
-    --color-red: #FE0000;
-    --color-black: #050504;
-    --color-maroon: #670B0C;
-    --color-outline: #201D1D;
-    --color-bg-warm: #FCFAF8;
-    --color-hero-bg: #3A2A30;
-    --color-text-muted: #666462;
-    --color-white: #FFFFFF;
+    --color-navy: #042C2B; /* Dark Teal */
+    --color-red: #042C2B; /* Changed accent to Dark Teal */
+    --color-black: #042C2B; /* All text dark teal */
+    --color-maroon: #042C2B;
+    --color-outline: #042C2B;
+    --color-bg-warm: #DBD1BE; /* Warm Beige */
+    --color-hero-bg: #042C2B; /* Dark Teal */
+    --color-text-muted: #2E4C4B; /* Lighter teal for muted text */
+    --color-white: #DBD1BE; /* Replaced white with beige for seamless integration */
     
     /* Typography using Next.js Google Fonts */
     --font-primary: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, sans-serif;

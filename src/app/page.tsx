@@ -6,8 +6,10 @@ import { products, offers, Product, CATEGORY_TREE } from "@/data/cms";
 import { useCart } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Reels from "@/components/Reels";
 import Preloader from "@/components/Preloader";
+import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
+import Features from "@/components/Features";
 
 export default function Home() {
   const {
@@ -656,8 +658,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reels Section */}
-      <Reels />
+      <Testimonials />
 
       {/* General Enquiry Section */}
       <section id="enquiry-section" className="enquiry-section section-padding">
