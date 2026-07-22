@@ -579,7 +579,7 @@ export default function AdminPage() {
                     {(() => {
                       const categoryOptions: { id: string; label: string }[] = [];
                       CATEGORY_TREE.forEach((main) => {
-                        if (main.subs.length === 0) {
+                        if ((main.subs.length as number) === 0) {
                           categoryOptions.push({ id: main.id, label: main.label });
                         } else {
                           main.subs.forEach((sub) => {
