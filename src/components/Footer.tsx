@@ -62,9 +62,19 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               </div>
             </div>
             <div className="footer-emblems-row" style={{ marginTop: "20px" }}>
-              <span className="footer-emblems-title">Digital Business Card</span>
-              <div style={{ marginTop: "10px", width: "100%", height: "200px", overflow: "hidden", borderRadius: "8px", border: "1px solid var(--color-outline)" }}>
-                <iframe src="/bussiness-card.pdf#toolbar=0&view=FitH" width="100%" height="100%" style={{ border: "none" }} title="North Pacific Business Card" />
+              <span className="footer-emblems-title">Scan to Contact</span>
+              <div style={{ marginTop: "10px", width: "150px", height: "150px", overflow: "hidden" }}>
+                <img 
+                  src="/images/qr-code.jpg" 
+                  alt="QR Code" 
+                  style={{ 
+                    width: "100%", 
+                    height: "100%", 
+                    objectFit: "cover",
+                    filter: "grayscale(100%) contrast(500%) brightness(1.5) invert(100%)",
+                    mixBlendMode: "screen"
+                  }} 
+                />
               </div>
             </div>
           </div>

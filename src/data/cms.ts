@@ -50,44 +50,11 @@ export const CATEGORY_TREE = [
     label: "Bottoms",
     icon: "fa-solid fa-socks",
     subs: [
-      { id: "pants formal",       label: "Formal Pants" },
-      { id: "pants chinos",       label: "Chinos" },
-      { id: "pants smart casual", label: "Smart Casual Pants" },
-      { id: "pants linen",        label: "Linen Pants" },
-      { id: "pants pleated",      label: "Pleated Pants" },
-      { id: "jeans straight",     label: "Straight Fit Jeans" },
-      { id: "jeans relaxed",      label: "Relaxed Jeans" },
-      { id: "jeans wide leg",     label: "Wide Leg Jeans" },
-      { id: "black denim",        label: "Black Denim" },
+      { id: "jeans",            label: "Jeans" },
+      { id: "pants chinos",     label: "Chinos" },
+      { id: "pants formal",     label: "Formal Pants" },
+      { id: "pants linen",      label: "Linen Pants" },
     ],
-  },
-  {
-    id: "formal-wear",
-    label: "Formal Wear",
-    icon: "fa-solid fa-user-tie",
-    subs: [
-      { id: "blazer business",     label: "Business" },
-      { id: "blazer linen",        label: "Linen" },
-      { id: "blazer smart casual", label: "Smart Casual" },
-    ],
-  },
-  {
-    id: "workwear-uniforms",
-    label: "Workwear & Uniforms",
-    icon: "fa-solid fa-hard-hat",
-    subs: [
-      { id: "corporate uniform",  label: "Corporate" },
-      { id: "medical uniform",    label: "Medical" },
-      { id: "chef uniform",       label: "Chef" },
-      { id: "industrial uniform", label: "Industrial" },
-      { id: "safety uniform",     label: "Safety" },
-    ],
-  },
-  {
-    id: "inner-underwear",
-    label: "Inner & Underwear",
-    icon: "fa-solid fa-box",
-    subs: [],
   },
 ] as const;
 
@@ -108,7 +75,7 @@ export const products: Product[] = [
     category: "linen shirt",
     price: 45.00,
     images: [
-      "/images/shirts/Linen/linen_shirt_1.png",
+      "/images/shirts/Linen/linen_1.png",
     ],
     badge: "PREMIUM",
     sizes: ["S", "M", "L", "XL"],
@@ -122,7 +89,7 @@ export const products: Product[] = [
     category: "formal shirt",
     price: 55.00,
     images: [
-      "/images/shirts/Formal/formal_shirt_1.png",
+      "/images/shirts/Formal/formal_1.png",
     ],
     badge: "NEW",
     sizes: ["S", "M", "L", "XL"],
@@ -136,7 +103,7 @@ export const products: Product[] = [
     category: "oxford shirt",
     price: 49.00,
     images: [
-      "/images/shirts/Oxford/oxford_shirt_1.png",
+      "/images/shirts/Oxford/oxford_1.png",
     ],
     badge: "NEW",
     sizes: ["S", "M", "L", "XL"],
@@ -150,7 +117,7 @@ export const products: Product[] = [
     category: "cuban collar shirt",
     price: 52.00,
     images: [
-      "/images/shirts/Cuban Collar/cuban_collar_1.png",
+      "/images/shirts/Cuban Collar/7b464220-11a0-4ba9-9689-555d66fe81a5.png",
     ],
     badge: "TRENDING",
     sizes: ["S", "M", "L", "XL"],
@@ -163,7 +130,7 @@ export const products: Product[] = [
     category: "linen shirt",
     price: 45.00,
     images: [
-      "/images/shirts/linen shirt/linen_2.png",
+      "/images/shirts/Linen/linen_1.png",
     ],
     badge: "NEW",
     sizes: ["S", "M", "L", "XL"],
@@ -176,7 +143,7 @@ export const products: Product[] = [
     category: "linen shirt",
     price: 48.00,
     images: [
-      "/images/shirts/linen shirt/linen_3.png",
+      "/images/shirts/Linen/linen_1.png",
     ],
     badge: "TRENDING",
     sizes: ["S", "M", "L", "XL"],
@@ -192,8 +159,7 @@ export const products: Product[] = [
     price: 49.00,
     salePrice: 39.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.16 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.17 PM.jpeg",
+      "/images/shirts/Printed/printed_1.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -206,8 +172,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 52.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.18 PM (1).jpeg",
+      "/images/shirts/Printed/printed_1.png",
     ],
     badge: "HOT",
     sizes: ["S", "M", "L", "XL"],
@@ -220,8 +185,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 50.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.19 PM (1).jpeg",
+      "/images/shirts/Printed/printed_1.png",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -234,8 +198,7 @@ export const products: Product[] = [
     category: "printed shirt",
     price: 48.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.20 PM (1).jpeg",
+      "/images/shirts/Printed/printed_1.png",
     ],
     badge: "",
     sizes: ["M", "L", "XL"],
@@ -249,8 +212,7 @@ export const products: Product[] = [
     price: 52.00,
     salePrice: 42.00,
     images: [
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM.jpeg",
-      "/images/shirts/printed shirt/WhatsApp Image 2026-06-22 at 3.09.21 PM (1).jpeg",
+      "/images/shirts/Printed/printed_1.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -295,8 +257,7 @@ export const products: Product[] = [
     price: 39.00,
     salePrice: 29.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.20 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.21 PM.jpeg",
+      "/images/tshirts-polos/tshirts_polos_3.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -309,8 +270,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 42.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.22 PM (1).jpeg",
+      "/images/tshirts-polos/tshirts_polos_1.png",
     ],
     badge: "ESSENTIAL",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -323,8 +283,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 40.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.02.23 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.25 PM.jpeg",
+      "/images/tshirts-polos/tshirts_polos_2.png",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -338,8 +297,7 @@ export const products: Product[] = [
     price: 45.00,
     salePrice: 35.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.26 PM (1).jpeg",
+      "/images/tshirts-polos/tshirts_polos_3.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -352,8 +310,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 44.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.27 PM (1).jpeg",
+      "/images/tshirts-polos/tshirts_polos_1.png",
     ],
     badge: "NEW",
     sizes: ["M", "L", "XL", "XXL"],
@@ -366,8 +323,7 @@ export const products: Product[] = [
     category: "polo tshirt",
     price: 38.00,
     images: [
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM.jpeg",
-      "/images/tshirts-polos/polo tshirt/WhatsApp Image 2026-06-22 at 3.06.28 PM (1).jpeg",
+      "/images/tshirts-polos/tshirts_polos_2.png",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -470,9 +426,7 @@ export const products: Product[] = [
     category: "striped tshirt",
     price: 36.00,
     images: [
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.10 PM.jpeg",
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM (1).jpeg",
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.11 PM (2).jpeg"
+      "/images/tshirts-polos/tshirts_polos_3.png",
     ],
     badge: "NEW",
     sizes: ["S", "M", "L", "XL"],
@@ -486,9 +440,7 @@ export const products: Product[] = [
     price: 38.00,
     salePrice: 28.00,
     images: [
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM.jpeg",
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM (1).jpeg",
-      "/images/tshirts-polos/striped t-shirt/WhatsApp Image 2026-06-22 at 3.07.12 PM (2).jpeg"
+      "/images/tshirts-polos/tshirts_polos_1.png",
     ],
     badge: "SALE",
     sizes: ["S", "M", "L", "XL"],
@@ -559,7 +511,7 @@ export const products: Product[] = [
     category: "chef uniform",
     price: 45.00,
     images: [
-      "/images/workwear-uniforms/chef uniform.png",
+      "/images/workwear-uniforms/workwear_uniforms_3.png",
     ],
     badge: "DURABLE",
     sizes: ["M", "L", "XL", "XXL"],
@@ -572,7 +524,7 @@ export const products: Product[] = [
     category: "corporate uniform",
     price: 39.00,
     images: [
-      "/images/workwear-uniforms/Corperate main.png",
+      "/images/workwear-uniforms/workwear_uniforms_2.png",
     ],
     badge: "OFFICE",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -585,7 +537,7 @@ export const products: Product[] = [
     category: "medical uniform",
     price: 29.00,
     images: [
-      "/images/workwear-uniforms/doctor uniform.png",
+      "/images/workwear-uniforms/workwear_uniforms_3.png",
     ],
     badge: "HYGIENE",
     sizes: ["S", "M", "L", "XL"],
@@ -598,7 +550,7 @@ export const products: Product[] = [
     category: "safety uniform",
     price: 59.00,
     images: [
-      "/images/workwear-uniforms/safety uniform.png",
+      "/images/workwear-uniforms/workwear_uniforms_4.png",
     ],
     badge: "SAFETY",
     sizes: ["M", "L", "XL", "XXL"],

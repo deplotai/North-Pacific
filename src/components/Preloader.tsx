@@ -12,80 +12,38 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    // Gather all image URLs that should be preloaded
-    const imageUrls = [
-      "/logo.png",
-      "/logo 2.png",
-      "/logo 3.png",
-      "/Website image/hero desktop.png",
-      "/Website image/hero mobile.png",
-      "/Website image/after hero desktop.png",
-      "/Website image/after hero mobile.png",
-      "/images/shirts/linen shirt for main.png",
-      "/images/shirts/Printed shirt for main.png",
-      "/images/shirts/Striped shirt for main.png",
-      "/images/tshirts-polos/polo tshirt for main.png",
-      "/images/tshirts-polos/print tshirt for main.png",
-      "/images/tshirts-polos/striped tshirt for main.png",
-      "/images/bottoms/formal trouser for main.png",
-      "/images/bottoms/pant for main section.png",
-      "/images/workwear-uniforms/chef uniform.png",
-      "/images/workwear-uniforms/Corperate main.png",
-      "/images/workwear-uniforms/doctor uniform.png",
-      "/images/workwear-uniforms/safety uniform.png",
-      "/images/workwear-uniforms/tshirt uniform.png",
-      "/images/formal-wear/blazer/blazer for main.png",
-      offers.bannerImage,
-      ...products.flatMap((p) => p.images),
-    ].filter(Boolean) as string[];
-
-    // Unique values
-    const uniqueUrls = Array.from(new Set(imageUrls));
-    const total = uniqueUrls.length;
-    let loadedCount = 0;
-
-    if (total === 0) {
-      setTimeout(() => {
-        setFade(true);
-        setTimeout(onComplete, 800);
-      }, 500);
-      return;
-    }
-
-    const updateProgress = () => {
-      loadedCount++;
-      const currentProgress = Math.floor((loadedCount / total) * 100);
-      setProgress(currentProgress);
-
-      if (loadedCount >= total) {
+    let currentProgress = 0;
+    
+    // Simulate a fast, luxurious loading sequence (completes in ~1.2 seconds)
+    const interval = setInterval(() => {
+      currentProgress += Math.floor(Math.random() * 15) + 5;
+      
+      if (currentProgress >= 100) {
+        currentProgress = 100;
+        setProgress(100);
+        clearInterval(interval);
+        
         setTimeout(() => {
           setFade(true);
-          setTimeout(onComplete, 800);
-        }, 600);
+          setTimeout(onComplete, 600);
+        }, 300);
+      } else {
+        setProgress(currentProgress);
       }
-    };
+    }, 100);
 
-    uniqueUrls.forEach((url) => {
-      const img = new window.Image();
-      img.onload = updateProgress;
-      img.onerror = updateProgress; // count as completed even if it fails to avoid getting stuck
-      img.src = url;
-    });
-
-    // Fallback: Max 8 seconds loading to prevent hanging
-    const fallbackTimeout = setTimeout(() => {
-      setFade(true);
-      setTimeout(onComplete, 800);
-    }, 8000);
-
-    return () => clearTimeout(fallbackTimeout);
-  }, [onComplete]);
+    return () => clearInterval(interval);
+  }, []); // Run only once on mount
 
   return (
     <div className={`preloader-overlay ${fade ? "fade-out" : ""}`}>
       <div className="preloader-content">
         <div className="preloader-logo-wrap">
-          <img src="/logo.png" alt="North Pacific Logo" className="preloader-logo" />
+          <img 
+            src="/images/transparent_logo.png" 
+            alt="North Pacific Logo" 
+            className="preloader-logo" 
+          />
         </div>
         
         <div className="preloader-progress-track">

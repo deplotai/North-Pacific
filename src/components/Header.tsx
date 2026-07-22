@@ -107,7 +107,11 @@ export default function Header({ onSelectCategory }: HeaderProps) {
             onClick={(e) => handleNavClick(e, "#hero-section")}
           >
             <div className="brand-logo">
-              <img src="/logo.png" alt="North Pacific Logo" className="header-logo-img" />
+              <img 
+                src="/images/transparent_logo_only.png" 
+                alt="North Pacific Logo" 
+                className="header-logo-img" 
+              />
             </div>
           </a>
         </div>
@@ -160,7 +164,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
               handleCategoryClick("all");
             }}
           >
-            <i className="fa-solid fa-grid-2"></i> SHOP ALL
+            SHOP ALL
           </a>
 
           <div className="sidebar-divider" />
@@ -179,7 +183,6 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                 }}
               >
                 <span className="sidebar-cat-label">
-                  <i className={`${main.icon} sidebar-cat-icon`}></i>
                   {main.label.toUpperCase()}
                 </span>
                 {main.subs.length > 0 && (
@@ -227,7 +230,6 @@ export default function Header({ onSelectCategory }: HeaderProps) {
               onClick={() => toggleMain("brochures")}
             >
               <span className="sidebar-cat-label">
-                <i className="fa-solid fa-file-pdf sidebar-cat-icon"></i>
                 COMPANY BROCHURES
               </span>
               <i className={`fa-solid fa-chevron-down sidebar-chevron ${expandedMain === "brochures" ? "rotated" : ""}`}></i>

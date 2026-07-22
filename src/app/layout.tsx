@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { GFS_Didot } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const didot = GFS_Didot({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-didot",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${didot.variable} h-full antialiased`}
     >
       <head>
         {/* FontAwesome for icons */}

@@ -7,9 +7,34 @@ import { useCart } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import Features from "@/components/Features";
+
+// We will replace Product type with Category type for the Catalog grid
+interface CatalogCategory {
+  id: string;
+  parent: string;
+  label: string;
+  img: string;
+}
+
+const catalogCategories: CatalogCategory[] = [
+  // Shirts
+  { id: "cuban collar shirt", parent: "shirts", label: "Cuban", img: "/images/shirts/Cuban Collar/7b464220-11a0-4ba9-9689-555d66fe81a5.png" },
+  { id: "formal shirt", parent: "shirts", label: "Formal", img: "/images/shirts/Formal/formal_1.png" },
+  { id: "linen shirt", parent: "shirts", label: "Linen", img: "/images/shirts/Linen/linen_1.png" },
+  { id: "oxford shirt", parent: "shirts", label: "Oxford", img: "/images/shirts/Oxford/oxford_1.png" },
+  { id: "printed shirt", parent: "shirts", label: "Printed", img: "/images/shirts/Printed/printed_1.png" },
+  // T-Shirts
+  { id: "graphic tshirt", parent: "tshirts-polos", label: "Graphic", img: "/images/tshirts-polos/Graphic/graphic_1.png" },
+  { id: "oversized tshirt", parent: "tshirts-polos", label: "Oversized", img: "/images/tshirts-polos/Oversized/oversized_1.png" },
+  { id: "plain essentials", parent: "tshirts-polos", label: "Plain", img: "/images/tshirts-polos/Plain Essentials/plain_essentials_1.png" },
+  { id: "polo tshirt", parent: "tshirts-polos", label: "Polo", img: "/images/tshirts-polos/Polo/polo_1.png" },
+  { id: "striped tshirt", parent: "tshirts-polos", label: "Striped", img: "/images/tshirts-polos/Striped/striped_1.png" },
+  // Bottoms
+  { id: "jeans", parent: "bottoms", label: "Jeans", img: "/images/bottoms/Jeans/jeans_1.png" },
+  { id: "pants chinos", parent: "bottoms", label: "Chinos", img: "/images/bottoms/Pants/Chinos/chinos_1.png" },
+  { id: "pants formal", parent: "bottoms", label: "Formal", img: "/images/bottoms/Pants/Formal/formal_1.png" },
+  { id: "pants linen", parent: "bottoms", label: "Linen", img: "/images/bottoms/Pants/Linen/linen_1.png" },
+];
 
 export default function Home() {
   const {
@@ -32,36 +57,36 @@ export default function Home() {
 
   // Active Category filter state
   const [activeCategory, setActiveCategory] = useState("all");
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const [filteredCategories, setFilteredCategories] = useState<CatalogCategory[]>(catalogCategories);
   const [fadeTrigger, setFadeTrigger] = useState(true);
 
   // Shirts Featured Grid images
   const shirtImages = [
-    "/images/shirts/linen shirt for main.png",
-    "/images/shirts/Printed shirt for main.png",
-    "/images/shirts/Striped shirt for main.png"
+    "/images/shirts/shirts_1.png",
+    "/images/shirts/shirts_2.png",
+    "/images/shirts/shirts_3.png"
   ];
 
-  // T-Shirts & Polos Featured Grid images
+  // Tshirts Featured Grid images
   const tshirtImages = [
-    "/images/tshirts-polos/polo tshirt for main.png",
-    "/images/tshirts-polos/print tshirt for main.png",
-    "/images/tshirts-polos/striped tshirt for main.png"
+    "/images/tshirts-polos/tshirts_polos_1.png",
+    "/images/tshirts-polos/tshirts_polos_2.png",
+    "/images/tshirts-polos/tshirts_polos_3.png"
   ];
 
   // Bottoms Featured Grid images
   const bottomImages = [
-    "/images/bottoms/formal trouser for main.png",
-    "/images/bottoms/pant for main section.png"
+    "/images/bottoms/bottoms_1.png",
+    "/images/bottoms/bottoms_2.png"
   ];
 
-  // Workwear & Uniforms Featured Grid images
+  // Workwear Featured Grid images
   const uniformImages = [
-    "/images/workwear-uniforms/chef uniform.png",
-    "/images/workwear-uniforms/Corperate main.png",
-    "/images/workwear-uniforms/doctor uniform.png",
-    "/images/workwear-uniforms/safety uniform.png",
-    "/images/workwear-uniforms/tshirt uniform.png"
+    "/images/workwear-uniforms/workwear_uniforms_1.png",
+    "/images/workwear-uniforms/workwear_uniforms_2.png",
+    "/images/workwear-uniforms/workwear_uniforms_3.png",
+    "/images/workwear-uniforms/workwear_uniforms_4.png",
+    "/images/workwear-uniforms/workwear_uniforms_5.png"
   ];
 
   // Quick View Modal state
@@ -97,11 +122,11 @@ export default function Home() {
     const timeout = setTimeout(() => {
       const filtered =
         activeCategory === "all"
-          ? productsList
-          : productsList.filter(
-              (p) => p.category === activeCategory || p.mainCategory === activeCategory
+          ? catalogCategories
+          : catalogCategories.filter(
+              (c) => c.id === activeCategory || c.parent === activeCategory
             );
-      setFilteredProducts(filtered);
+      setFilteredCategories(filtered);
       setFadeTrigger(true);
     }, 250);
 
@@ -152,7 +177,7 @@ export default function Home() {
 
   // Intersection Observer for scroll animations
   useEffect(() => {
-    // Small delay to let DOM settle after filteredProducts update
+    // Small delay to let DOM settle after filteredCategories update
     const timer = setTimeout(() => {
       const revealElements = document.querySelectorAll(".reveal-on-scroll:not(.active)");
       if (revealElements.length === 0) return;
@@ -180,7 +205,7 @@ export default function Home() {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [filteredProducts]);
+  }, [filteredCategories]);
 
 
   // Handle product card size selection
@@ -362,7 +387,7 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/formal-wear/blazer for main.png" alt="Formal Wear" className="category-card-img img-default" />
+              <img src="/images/formal-wear/formal_wear_1.png" alt="Formal Wear" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">FORMAL WEAR</h3>
@@ -527,51 +552,32 @@ export default function Home() {
               transition: "opacity 0.3s ease, transform 0.3s ease",
             }}
           >
-            {filteredProducts.length === 0 ? (
+            {filteredCategories.length === 0 ? (
               <div className="grid-loader">
-                <p>No products found in this category.</p>
+                <p>No categories found.</p>
               </div>
             ) : (
-              filteredProducts.map((product) => {
-                const mainImg = product.images[0] ?? "";
-
-                return (
-                  <div key={product.id} className="product-card reveal-on-scroll" data-id={product.id}>
-                    <div className="product-image-wrap" onClick={() => handleOpenQuickView(product.id)}>
-                      {/* Individual Watermark Background */}
-                      <img src="/logo 3.png" alt="Watermark" className="card-watermark" />
-                      
-                      {/* Product Image */}
-                      <img
-                        src={mainImg}
-                        alt={product.name}
-                        className="product-img img-default"
-                        loading="lazy"
-                      />
-                      {product.images.length > 1 && (
-                        <img
-                          src={product.images[1]}
-                          alt={`${product.name} alternate view`}
-                          className="product-img img-hover"
-                          loading="lazy"
-                        />
-                      )}
-                    </div>
-                    <div className="product-info-minimal">
-                      <a
-                        href="#"
-                        className="product-name-link-minimal"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleOpenQuickView(product.id);
-                        }}
-                      >
-                        {product.name}
-                      </a>
-                    </div>
+              filteredCategories.map((cat) => (
+                <div key={cat.id} className="product-card reveal-on-scroll" style={{ cursor: 'pointer' }}>
+                  <div className="product-image-wrap">
+                    {/* Individual Watermark Background */}
+                    <img src="/logo 3.png" alt="Watermark" className="card-watermark" />
+                    
+                    {/* Category Image */}
+                    <img
+                      src={cat.img}
+                      alt={cat.label}
+                      className="product-img img-default"
+                      loading="lazy"
+                    />
                   </div>
-                );
-              })
+                  <div className="product-info-minimal">
+                    <span className="product-name-link-minimal" style={{ fontSize: '1.2rem', fontWeight: 600 }}>
+                      {cat.label}
+                    </span>
+                  </div>
+                </div>
+              ))
             )}
           </div>
         </div>
@@ -658,8 +664,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
-
       {/* General Enquiry Section */}
       <section id="enquiry-section" className="enquiry-section section-padding">
         <div className="section-container">
@@ -689,6 +693,24 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i> UNIFORMS BROCHURE
                 </a>
               </div>
+              
+              <div style={{ marginTop: "30px", marginBottom: "30px" }}>
+                <span className="section-title" style={{ fontSize: "14px", display: "block" }}>Scan to Contact</span>
+                <div style={{ marginTop: "15px", width: "150px", height: "150px", overflow: "hidden", border: "1px solid var(--color-outline)", borderRadius: "4px" }}>
+                  <img 
+                    src="/images/qr-code.jpg" 
+                    alt="QR Code" 
+                    style={{ 
+                      width: "100%", 
+                      height: "100%", 
+                      objectFit: "cover",
+                      filter: "grayscale(100%) contrast(500%) brightness(1.5)",
+                      mixBlendMode: "multiply"
+                    }} 
+                  />
+                </div>
+              </div>
+
               <div className="enquiry-features">
                 <div className="feature-item">
                   <span className="feature-icon">
