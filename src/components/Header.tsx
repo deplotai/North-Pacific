@@ -108,7 +108,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
           >
             <div className="brand-logo">
               <img 
-                src="/images/transparent_logo_only.png" 
+                src="/images/transparent_logo.png" 
                 alt="North Pacific Logo" 
                 className="header-logo-img" 
               />
@@ -175,7 +175,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
               <button
                 className={`sidebar-main-cat ${expandedMain === main.id ? "open" : ""}`}
                 onClick={() => {
-                  if (main.subs.length === 0) {
+                  if ((main.subs.length as number) === 0) {
                     handleCategoryClick(main.id);
                   } else {
                     toggleMain(main.id);
@@ -185,7 +185,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                 <span className="sidebar-cat-label">
                   {main.label.toUpperCase()}
                 </span>
-                {main.subs.length > 0 && (
+                {(main.subs.length as number) > 0 && (
                   <i className={`fa-solid fa-chevron-down sidebar-chevron ${expandedMain === main.id ? "rotated" : ""}`}></i>
                 )}
               </button>

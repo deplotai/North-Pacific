@@ -522,7 +522,7 @@ export default function Home() {
               {CATEGORY_TREE.map((main) => {
                 const isMainActive =
                   main.subs.some((s) => s.id === activeCategory) || activeCategory === main.id;
-                if (!isMainActive || main.subs.length === 0) return null;
+                if (!isMainActive || (main.subs.length as number) === 0) return null;
                 return (
                   <div key={main.id} className="filter-sub-row">
                     {main.subs.map((sub) => (
