@@ -39,7 +39,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
         <div className="section-container footer-grid">
           <div className="footer-col col-brand">
             <div className="footer-logo-container">
-              <img src="/logo.png" alt="North Pacific Logo" className="footer-logo-img" />
+              <img src="/images/transparent_logo.png" alt="North Pacific Logo" className="footer-logo-img" />
             </div>
             <p className="footer-desc">
               Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.
