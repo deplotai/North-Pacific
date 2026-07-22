@@ -2861,7 +2861,7 @@ button {
 
 /* Catalogue Section Background */
 .products-section {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/images/zedior_background.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/zedior_background.png');
     background-size: 100vw auto;
     background-repeat: repeat;
     background-position: top center;
