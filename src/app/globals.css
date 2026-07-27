@@ -254,7 +254,6 @@ button {
     height: 80px;
     width: auto;
     object-fit: contain;
-    transform: scale(3);
     transition: height var(--transition-smooth);
 }
 
