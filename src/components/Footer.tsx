@@ -39,7 +39,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
         <div className="section-container footer-grid">
           <div className="footer-col col-brand">
             <div className="footer-logo-container">
-              <img src="/logo.png" alt="North Pacific Logo" className="footer-logo-img" />
+              <img src="/logo.webp" alt="North Pacific Logo" className="footer-logo-img" />
             </div>
             <p className="footer-desc">
               Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.
@@ -55,7 +55,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               <span className="footer-emblems-title">Scan to Contact</span>
               <div style={{ marginTop: "10px", width: "150px", height: "150px", overflow: "hidden" }}>
                 <img 
-                  src="/images/qr-code.jpg" 
+                  src="/images/qr-code.webp" 
                   alt="QR Code" 
                   style={{ 
                     width: "100%", 

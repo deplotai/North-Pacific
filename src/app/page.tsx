@@ -102,31 +102,31 @@ export default function Home() {
 
   // Shirts Featured Grid images
   const shirtImages = [
-    "/images/shirts/shirts_1.png",
-    "/images/shirts/shirts_2.png",
-    "/images/shirts/shirts_3.png"
+    "/images/shirts/shirts_1.webp",
+    "/images/shirts/shirts_2.webp",
+    "/images/shirts/shirts_3.webp"
   ];
 
   // Tshirts Featured Grid images
   const tshirtImages = [
-    "/images/T-Shirts & Polos/tshirts_polos_1.png",
-    "/images/T-Shirts & Polos/tshirts_polos_2.png",
-    "/images/T-Shirts & Polos/tshirts_polos_3.png"
+    "/images/T-Shirts & Polos/tshirts_polos_1.webp",
+    "/images/T-Shirts & Polos/tshirts_polos_2.webp",
+    "/images/T-Shirts & Polos/tshirts_polos_3.webp"
   ];
 
   // Bottoms Featured Grid images
   const bottomImages = [
-    "/images/bottoms/bottoms_1.png",
-    "/images/bottoms/bottoms_2.png"
+    "/images/bottoms/bottoms_1.webp",
+    "/images/bottoms/bottoms_2.webp"
   ];
 
   // Uniforms Featured Grid images
   const uniformImages = [
-    "/images/Uniforms/workwear_uniforms_1.png",
-    "/images/Uniforms/workwear_uniforms_2.png",
-    "/images/Uniforms/workwear_uniforms_3.png",
-    "/images/Uniforms/workwear_uniforms_4.png",
-    "/images/Uniforms/workwear_uniforms_5.png"
+    "/images/Uniforms/workwear_uniforms_1.webp",
+    "/images/Uniforms/workwear_uniforms_2.webp",
+    "/images/Uniforms/workwear_uniforms_3.webp",
+    "/images/Uniforms/workwear_uniforms_4.webp",
+    "/images/Uniforms/workwear_uniforms_5.webp"
   ];
 
   // Quick View Modal state
@@ -341,13 +341,13 @@ export default function Home() {
       <section className="hero-section" id="hero-section">
         {/* Full hero image (desktop) */}
         <img
-          src="/Website image/hero desktop.png"
+          src="/Website image/hero desktop.webp"
           alt="North Pacific Hero Desktop"
           className="hero-img hero-img-desktop"
         />
         {/* Full hero image (mobile) */}
         <img
-          src="/Website image/hero mobile.png"
+          src="/Website image/hero mobile.webp"
           alt="North Pacific Hero Mobile"
           className="hero-img hero-img-mobile"
         />
@@ -356,12 +356,12 @@ export default function Home() {
       {/* Hero Promo Section */}
       <section className="hero-promo-section">
         <img
-          src="/Website image/after hero desktop.png"
+          src="/Website image/after hero desktop.webp"
           alt="North Pacific Promo Desktop"
           className="promo-img promo-img-desktop"
         />
         <img
-          src="/Website image/after hero mobile.png"
+          src="/Website image/after hero mobile.webp"
           alt="North Pacific Promo Mobile"
           className="promo-img promo-img-mobile"
         />
@@ -436,7 +436,7 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/Blazers & Jackets/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
+              <img src="/images/Blazers & Jackets/formal_wear_1.webp" alt="Blazers & Jackets" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">BLAZERS &amp; JACKETS</h3>
@@ -516,7 +516,7 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/Blazers & Jackets/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
+              <img src="/images/Blazers & Jackets/formal_wear_1.webp" alt="Blazers & Jackets" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">BLAZERS &amp; JACKETS</h3>
@@ -760,7 +760,7 @@ export default function Home() {
                 <span className="section-title" style={{ fontSize: "14px", display: "block" }}>Scan to Contact</span>
                 <div style={{ marginTop: "15px", width: "150px", height: "150px", overflow: "hidden", border: "1px solid var(--color-outline)", borderRadius: "4px" }}>
                   <img 
-                    src="/images/qr-code.jpg" 
+                    src="/images/qr-code.webp" 
                     alt="QR Code" 
                     style={{ 
                       width: "100%", 

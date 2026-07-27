@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   title: "NORTH PACIFIC | Premium Streetwear",
   description: "Premium streetwear and apparel by North Pacific. Order direct via WhatsApp.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
       className={`${didot.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" href="/logo.png" as="image" />
+        <link rel="preload" href="/logo.webp" as="image" />
         {/* FontAwesome for icons */}
         <link
           rel="stylesheet"

@@ -91,7 +91,7 @@ export const CATEGORY_TREE = [
 ] as const;
 
 export const offers: OfferConfig = {
-  bannerImage: "/images/mobile-hero-promo.png",
+  bannerImage: "/images/mobile-hero-promo.webp",
   title: "OFFER WINDOW",
   text: "Elevate your wardrobe with premium fabrics. Special bundle pricing is active for a limited time. Add items to your cart and checkout via WhatsApp to lock in the deals.",
   countdownHours: 12,
@@ -106,7 +106,7 @@ export const products: Product[] = [
     category: "cuban-collar-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Cuban Collar Shirt/image.png",
+      "/images/products/Shirts/Cuban Collar Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -119,7 +119,7 @@ export const products: Product[] = [
     category: "resort-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Resort Shirt/image.png",
+      "/images/products/Shirts/Resort Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -132,7 +132,7 @@ export const products: Product[] = [
     category: "linen-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Linen Shirt/image.png",
+      "/images/products/Shirts/Linen Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -145,7 +145,7 @@ export const products: Product[] = [
     category: "oxford-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Oxford Shirt/image.png",
+      "/images/products/Shirts/Oxford Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -158,7 +158,7 @@ export const products: Product[] = [
     category: "denim-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Denim Shirt/image.png",
+      "/images/products/Shirts/Denim Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -171,7 +171,7 @@ export const products: Product[] = [
     category: "flannel-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Flannel Shirt/image.png",
+      "/images/products/Shirts/Flannel Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -184,7 +184,7 @@ export const products: Product[] = [
     category: "printed-shirt",
     price: 49.00,
     images: [
-      "/images/products/Shirts/Printed Shirt/image.png",
+      "/images/products/Shirts/Printed Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -197,7 +197,7 @@ export const products: Product[] = [
     category: "plain-crew-neck-t-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Plain Crew Neck T-Shirt/image.png",
+      "/images/products/T-Shirts/Plain Crew Neck T-Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -210,7 +210,7 @@ export const products: Product[] = [
     category: "oversized-t-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Oversized T-Shirt/image.png",
+      "/images/products/T-Shirts/Oversized T-Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -223,7 +223,7 @@ export const products: Product[] = [
     category: "heavyweight-t-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Heavyweight T-Shirt/image.png",
+      "/images/products/T-Shirts/Heavyweight T-Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -236,7 +236,7 @@ export const products: Product[] = [
     category: "graphic-t-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Graphic T-Shirt/image.png",
+      "/images/products/T-Shirts/Graphic T-Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -249,7 +249,7 @@ export const products: Product[] = [
     category: "henley-t-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Henley T-Shirt/image.png",
+      "/images/products/T-Shirts/Henley T-Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -262,7 +262,7 @@ export const products: Product[] = [
     category: "classic-polo-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Classic Polo Shirt/image.png",
+      "/images/products/T-Shirts/Classic Polo Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -275,7 +275,7 @@ export const products: Product[] = [
     category: "striped-polo-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Striped Polo Shirt/image.png",
+      "/images/products/T-Shirts/Striped Polo Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -288,7 +288,7 @@ export const products: Product[] = [
     category: "knit-polo-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Knit Polo Shirt/image.png",
+      "/images/products/T-Shirts/Knit Polo Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -301,7 +301,7 @@ export const products: Product[] = [
     category: "quarter-zip-polo-shirt",
     price: 49.00,
     images: [
-      "/images/products/T-Shirts/Quarter Zip Polo Shirt/image.png",
+      "/images/products/T-Shirts/Quarter Zip Polo Shirt/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -314,7 +314,7 @@ export const products: Product[] = [
     category: "formal-trousers",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Formal Trousers/image.png",
+      "/images/products/Bottoms/Formal Trousers/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -327,7 +327,7 @@ export const products: Product[] = [
     category: "chino-pants",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Chino Pants/image.png",
+      "/images/products/Bottoms/Chino Pants/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -340,7 +340,7 @@ export const products: Product[] = [
     category: "linen-pants",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Linen Pants/image.png",
+      "/images/products/Bottoms/Linen Pants/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -353,7 +353,7 @@ export const products: Product[] = [
     category: "baggy-denim-jeans",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Baggy Denim Jeans/image.png",
+      "/images/products/Bottoms/Baggy Denim Jeans/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -366,7 +366,7 @@ export const products: Product[] = [
     category: "cargo-denim-jeans",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Cargo Denim Jeans/image.png",
+      "/images/products/Bottoms/Cargo Denim Jeans/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -379,7 +379,7 @@ export const products: Product[] = [
     category: "cargo-pants",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Cargo Pants/image.png",
+      "/images/products/Bottoms/Cargo Pants/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -392,7 +392,7 @@ export const products: Product[] = [
     category: "joggers",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Joggers/image.png",
+      "/images/products/Bottoms/Joggers/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -405,7 +405,7 @@ export const products: Product[] = [
     category: "chino-shorts",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Chino Shorts/image.png",
+      "/images/products/Bottoms/Chino Shorts/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -418,7 +418,7 @@ export const products: Product[] = [
     category: "linen-shorts",
     price: 49.00,
     images: [
-      "/images/products/Bottoms/Linen Shorts/image.png",
+      "/images/products/Bottoms/Linen Shorts/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -431,7 +431,7 @@ export const products: Product[] = [
     category: "formal-blazer",
     price: 49.00,
     images: [
-      "/images/products/Blazers & Jackets/Formal Blazer/image.png",
+      "/images/products/Blazers & Jackets/Formal Blazer/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -444,7 +444,7 @@ export const products: Product[] = [
     category: "bomber-jacket",
     price: 49.00,
     images: [
-      "/images/products/Blazers & Jackets/Bomber Jacket/image.png",
+      "/images/products/Blazers & Jackets/Bomber Jacket/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -457,7 +457,7 @@ export const products: Product[] = [
     category: "lightweight-utility-jacket",
     price: 49.00,
     images: [
-      "/images/products/Blazers & Jackets/Lightweight Utility Jacket/image.png",
+      "/images/products/Blazers & Jackets/Lightweight Utility Jacket/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -470,7 +470,7 @@ export const products: Product[] = [
     category: "corporate-polo-uniform",
     price: 49.00,
     images: [
-      "/images/products/Uniforms/Corporate Polo Uniform/image.png",
+      "/images/products/Uniforms/Corporate Polo Uniform/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -483,7 +483,7 @@ export const products: Product[] = [
     category: "doctor-uniform",
     price: 49.00,
     images: [
-      "/images/products/Uniforms/Doctor Uniform/image.png",
+      "/images/products/Uniforms/Doctor Uniform/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -496,7 +496,7 @@ export const products: Product[] = [
     category: "chef-uniform",
     price: 49.00,
     images: [
-      "/images/products/Uniforms/Chef Uniform/image.png",
+      "/images/products/Uniforms/Chef Uniform/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
@@ -509,7 +509,7 @@ export const products: Product[] = [
     category: "safety-industrial-workwear-uniform",
     price: 49.00,
     images: [
-      "/images/products/Uniforms/Safety Industrial Workwear Uniform/image.png",
+      "/images/products/Uniforms/Safety Industrial Workwear Uniform/image.webp",
     ],
     badge: "",
     sizes: ["S", "M", "L", "XL"],
