@@ -67,13 +67,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
             >
               Offers
             </a>
-            <a
-              href="#reels-section"
-              className="nav-link"
-              onClick={(e) => handleNavClick(e, "#reels-section")}
-            >
-              NP Reels
-            </a>
+
             <div className="nav-dropdown-container">
               <button className="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
                 Brochures
@@ -271,17 +265,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
           >
             ACTIVE OFFERS
           </a>
-          <a
-            href="#reels-section"
-            className="sidebar-link"
-            onClick={(e) => {
-              e.preventDefault();
-              setIsSidebarOpen(false);
-              document.querySelector("#reels-section")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            INSTAGRAM REELS
-          </a>
+
           <a
             href="#enquiry-section"
             className="sidebar-link"
