@@ -274,7 +274,7 @@ button {
 .nav-toggle .bar {
     width: 100%;
     height: 2px;
-    background-color: var(--color-black);
+    background-color: var(--color-white);
     transition: var(--transition-fast);
 }
 
@@ -295,7 +295,7 @@ button {
     font-weight: 400;
     letter-spacing: -0.02em;
     text-transform: capitalize;
-    color: var(--color-black);
+    color: var(--color-white);
     position: relative;
     padding: 10px 0;
 }
@@ -3029,8 +3029,6 @@ button {
     width: 100%;
     height: auto;
     object-fit: contain;
-    /* Optional: keep the same filter if it's supposed to be white */
-    filter: brightness(0) invert(1);
 }
 
 .preloader-title {
@@ -3053,10 +3051,11 @@ button {
     font-size: 11px;
     letter-spacing: -0.02em;
     z-index: 2;
+    color: var(--color-white);
 }
 
 .legal-link {
-    color: var(--color-black);
+    color: var(--color-white);
     text-decoration: none;
     transition: var(--transition-smooth);
 }
@@ -3414,6 +3413,33 @@ button {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.nav-toggle .bar {
+    background-color: var(--color-white);
+}
+
+.nav-link {
+    color: var(--color-white);
+}
+
+.cart-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+}
+
+.legal-link {
+    color: var(--color-white);
+}
+
+.preloader-legal {
+    color: var(--color-white);
 }
 
 .support-link {
