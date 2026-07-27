@@ -39,7 +39,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
         <div className="section-container footer-grid">
           <div className="footer-col col-brand">
             <div className="footer-logo-container">
-              <img src="/images/transparent_logo.png" alt="North Pacific Logo" className="footer-logo-img" />
+              <img src="/logo.png" alt="North Pacific Logo" className="footer-logo-img" />
             </div>
             <p className="footer-desc">
               Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.
@@ -50,17 +50,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               <a href="#" aria-label="TikTok"><i className="fa-brands fa-tiktok"></i></a>
               <a href="#" aria-label="Pinterest"><i className="fa-brands fa-pinterest"></i></a>
             </div>
-            <div className="footer-emblems-row">
-              <span className="footer-emblems-title">Alternative Marks</span>
-              <div className="footer-emblems-list">
-                <div className="footer-emblem-wrapper" title="Uniform Crown Logo">
-                  <img src="/logo 2.png" alt="Uniform Crown" className="footer-emblem-img emblem-logo2" />
-                </div>
-                <div className="footer-emblem-wrapper" title="Streetwear Crest Logo">
-                  <img src="/logo 3.png" alt="Streetwear Crest" className="footer-emblem-img emblem-logo3" />
-                </div>
-              </div>
-            </div>
+
             <div className="footer-emblems-row" style={{ marginTop: "20px" }}>
               <span className="footer-emblems-title">Scan to Contact</span>
               <div style={{ marginTop: "10px", width: "150px", height: "150px", overflow: "hidden" }}>

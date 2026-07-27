@@ -2,7 +2,7 @@
 :root {
     --color-navy: #042C2B; /* Dark Teal */
     --color-red: #042C2B; /* Changed accent to Dark Teal */
-    --color-black: #042C2B; /* All text dark teal */
+    --color-black: #000000; /* Pure black text */
     --color-maroon: #042C2B;
     --color-outline: #042C2B;
     --color-bg-warm: #F8F7F4; /* Much lighter, off-white beige */
@@ -249,19 +249,16 @@ button {
     transition: opacity var(--transition-smooth);
 }
 
+
 .header-logo-img {
     height: 80px;
     width: auto;
     object-fit: contain;
-    mix-blend-mode: screen;
-    transition: height var(--transition-smooth), filter var(--transition-smooth), mix-blend-mode var(--transition-smooth);
+    filter: brightness(0);
+    transition: height var(--transition-smooth);
 }
 
-
-/* Invert the white signature logo to black and shrink it when header is scrolled (white background) */
 .main-header.scrolled .header-logo-img {
-    filter: invert(1);
-    mix-blend-mode: multiply;
     height: 60px;
 }
 
@@ -282,9 +279,7 @@ button {
     transition: var(--transition-fast);
 }
 
-.main-header:not(.scrolled) .nav-toggle .bar {
-    background-color: var(--color-white);
-}
+
 
 .nav-toggle:hover .bar:nth-child(2) {
     transform: translateX(4px);
@@ -306,9 +301,7 @@ button {
     padding: 10px 0;
 }
 
-.main-header:not(.scrolled) .nav-link {
-    color: var(--color-white);
-}
+
 
 .nav-link::after {
     content: '';
@@ -340,9 +333,7 @@ button {
     transition: var(--transition-fast);
 }
 
-.main-header:not(.scrolled) .cart-toggle-btn {
-    color: var(--color-white);
-}
+
 
 .cart-icon-wrapper {
     position: relative;
@@ -2087,9 +2078,10 @@ button {
 }
 
 .footer-logo-img {
-    height: 80px;
+    height: 60px;
     width: auto;
     object-fit: contain;
+    filter: brightness(0);
 }
 
 .footer-desc {
@@ -2388,89 +2380,47 @@ button {
     border-top: var(--border-width) solid var(--color-outline);
     background-color: var(--color-bg-warm);
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.featured-categories-section::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    width: max-content;
     border-left: var(--border-width) solid var(--color-outline);
 }
 
-/* Coming-soon placeholder card */
-.category-placeholder-bg {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-}
-
-.coming-soon-card .category-card-header {
-    color: rgba(255,255,255,0.5);
-}
-
-.coming-soon-card .cat-num {
-    color: rgba(255,255,255,0.4);
-}
-
-.coming-soon-card .cat-arrow {
-    color: rgba(255,255,255,0.3);
-}
-
-.coming-soon-card .category-card-footer {
-    background: #111;
-    border-top-color: #333;
-}
-
-.coming-soon-card .category-card-title {
-    color: rgba(255,255,255,0.8);
-}
-
-.category-card-link.muted {
-    color: var(--color-text-muted);
-    border-color: var(--color-text-muted);
-    cursor: default;
-    font-size: 10px;
-    letter-spacing: -0.02em;
-}
-
-.cat-coming-soon-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.45);
-}
-
-.cat-coming-soon-overlay span {
-    font-family: var(--font-primary);
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: rgba(255,255,255,0.7);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 6px 16px;
-}
-
 @media (max-width: 1024px) {
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .category-grid-card {
+        width: calc(100vw / 2) !important;
     }
 }
 
 @media (max-width: 600px) {
-    .categories-grid {
-        grid-template-columns: repeat(1, 1fr);
+    .category-grid-card {
+        width: 100vw !important;
     }
 }
 
 .category-grid-card {
     display: flex;
+    flex: 0 0 auto;
+    width: calc(100vw / 3);
     flex-direction: column;
     background-color: var(--color-bg-warm);
     border-right: var(--border-width) solid var(--color-outline);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    cursor: grab;
+    scroll-snap-align: start;
 }
-
+.category-grid-card:active {
+    cursor: grabbing;
+}
 .category-grid-card:last-child {
     border-right: none;
 }

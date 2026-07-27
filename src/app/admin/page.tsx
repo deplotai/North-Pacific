@@ -285,8 +285,7 @@ export default function AdminPage() {
       {/* Header */}
       <header className="admin-header">
         <div className="header-logo">
-          <span className="logo-title">NORTH PACIFIC</span>
-          <span className="logo-subtitle">ADMIN SYSTEM</span>
+          <img src="/logo.png" alt="North Pacific Logo" style={{ height: "40px" }} />
         </div>
         <Link href="/" className="back-to-store-btn">
           <i className="fa-solid fa-arrow-left"></i> BACK TO STORE

@@ -17,38 +17,37 @@ interface CatalogCategory {
 }
 
 const catalogCategories: CatalogCategory[] = [
-  { id: "cuban-collar-shirt", parent: "shirts", label: "Cuban Collar Shirt", img: "/images/Shirts/Cuban Collar Shirt/image.png" },
-  { id: "resort-shirt", parent: "shirts", label: "Resort Shirt", img: "/images/Shirts/Resort Shirt/image.png" },
-  { id: "linen-shirt", parent: "shirts", label: "Linen Shirt", img: "/images/Shirts/Linen Shirt/image.png" },
-  { id: "oxford-shirt", parent: "shirts", label: "Oxford Shirt", img: "/images/Shirts/Oxford Shirt/image.png" },
-  { id: "denim-shirt", parent: "shirts", label: "Denim Shirt", img: "/images/Shirts/Denim Shirt/image.png" },
-  { id: "flannel-shirt", parent: "shirts", label: "Flannel Shirt", img: "/images/Shirts/Flannel Shirt/image.png" },
-  { id: "printed-shirt", parent: "shirts", label: "Printed Shirt", img: "/images/Shirts/Printed Shirt/image.png" },
-  { id: "plain-crew-neck-t-shirt", parent: "tshirts", label: "Plain Crew Neck T-Shirt", img: "/images/T-Shirts & Polos/Plain Crew Neck T-Shirt/image.png" },
-  { id: "oversized-t-shirt", parent: "tshirts", label: "Oversized T-Shirt", img: "/images/T-Shirts & Polos/Oversized T-Shirt/image.png" },
-  { id: "heavyweight-t-shirt", parent: "tshirts", label: "Heavyweight T-Shirt", img: "/images/T-Shirts & Polos/Heavyweight T-Shirt/image.png" },
-  { id: "graphic-t-shirt", parent: "tshirts", label: "Graphic T-Shirt", img: "/images/T-Shirts & Polos/Graphic T-Shirt/image.png" },
-  { id: "henley-t-shirt", parent: "tshirts", label: "Henley T-Shirt", img: "/images/T-Shirts & Polos/Henley T-Shirt/image.png" },
-  { id: "classic-polo-shirt", parent: "tshirts", label: "Classic Polo Shirt", img: "/images/T-Shirts & Polos/Classic Polo Shirt/image.png" },
-  { id: "striped-polo-shirt", parent: "tshirts", label: "Striped Polo Shirt", img: "/images/T-Shirts & Polos/Striped Polo Shirt/image.png" },
-  { id: "knit-polo-shirt", parent: "tshirts", label: "Knit Polo Shirt", img: "/images/T-Shirts & Polos/Knit Polo Shirt/image.png" },
-  { id: "quarter-zip-polo-shirt", parent: "tshirts", label: "Quarter Zip Polo Shirt", img: "/images/T-Shirts & Polos/Quarter Zip Polo Shirt/image.png" },
-  { id: "formal-trousers", parent: "bottoms", label: "Formal Trousers", img: "/images/Bottoms/Formal Trousers/image.png" },
-  { id: "chino-pants", parent: "bottoms", label: "Chino Pants", img: "/images/Bottoms/Chino Pants/image.png" },
-  { id: "linen-pants", parent: "bottoms", label: "Linen Pants", img: "/images/Bottoms/Linen Pants/image.png" },
-  { id: "baggy-denim-jeans", parent: "bottoms", label: "Baggy Denim Jeans", img: "/images/Bottoms/Baggy Denim Jeans/image.png" },
-  { id: "cargo-denim-jeans", parent: "bottoms", label: "Cargo Denim Jeans", img: "/images/Bottoms/Cargo Denim Jeans/image.png" },
-  { id: "cargo-pants", parent: "bottoms", label: "Cargo Pants", img: "/images/Bottoms/Cargo Pants/image.png" },
-  { id: "joggers", parent: "bottoms", label: "Joggers", img: "/images/Bottoms/Joggers/image.png" },
-  { id: "chino-shorts", parent: "bottoms", label: "Chino Shorts", img: "/images/Bottoms/Chino Shorts/image.png" },
-  { id: "linen-shorts", parent: "bottoms", label: "Linen Shorts", img: "/images/Bottoms/Linen Shorts/image.png" },
-  { id: "formal-blazer", parent: "blazers-jackets", label: "Formal Blazer", img: "/images/Blazers & Jackets/Formal Blazer/image.png" },
-  { id: "bomber-jacket", parent: "blazers-jackets", label: "Bomber Jacket", img: "/images/Blazers & Jackets/Bomber Jacket/image.png" },
-  { id: "lightweight-utility-jacket", parent: "blazers-jackets", label: "Lightweight Utility Jacket", img: "/images/Blazers & Jackets/Lightweight Utility Jacket/image.png" },
-  { id: "corporate-polo-uniform", parent: "uniforms", label: "Corporate Polo Uniform", img: "/images/Uniforms/Corporate Polo Uniform/image.png" },
-  { id: "doctor-uniform", parent: "uniforms", label: "Doctor Uniform", img: "/images/Uniforms/Doctor Uniform/image.png" },
-  { id: "chef-uniform", parent: "uniforms", label: "Chef Uniform", img: "/images/Uniforms/Chef Uniform/image.png" },
-  { id: "safety-industrial-workwear-uniform", parent: "uniforms", label: "Safety or Industrial Workwear Uniform", img: "/images/Uniforms/Safety or Industrial Workwear Uniform/image.png" },
+  { id: "cuban-collar-shirt", parent: "shirts", label: "Cuban Collar Shirt", img: "/images/Shirts/Cuban Collar Shirt/image.webp" },
+  { id: "resort-shirt", parent: "shirts", label: "Resort Shirt", img: "/images/Shirts/Resort Shirt/image.webp" },
+  { id: "linen-shirt", parent: "shirts", label: "Linen Shirt", img: "/images/Shirts/Linen Shirt/image.webp" },
+  { id: "oxford-shirt", parent: "shirts", label: "Oxford Shirt", img: "/images/Shirts/Oxford Shirt/image.webp" },
+  { id: "denim-shirt", parent: "shirts", label: "Denim Shirt", img: "/images/Shirts/Denim Shirt/image.webp" },
+  { id: "flannel-shirt", parent: "shirts", label: "Flannel Shirt", img: "/images/Shirts/Flannel Shirt/image.webp" },
+  { id: "printed-shirt", parent: "shirts", label: "Printed Shirt", img: "/images/Shirts/Printed Shirt/image.webp" },
+  { id: "plain-crew-neck-t-shirt", parent: "tshirts", label: "Plain Crew Neck T-Shirt", img: "/images/T-Shirts & Polos/Plain Crew Neck T-Shirt/image.webp" },
+  { id: "oversized-t-shirt", parent: "tshirts", label: "Oversized T-Shirt", img: "/images/T-Shirts & Polos/Oversized T-Shirt/image.webp" },
+  { id: "heavyweight-t-shirt", parent: "tshirts", label: "Heavyweight T-Shirt", img: "/images/T-Shirts & Polos/Heavyweight T-Shirt/image.webp" },
+  { id: "graphic-t-shirt", parent: "tshirts", label: "Graphic T-Shirt", img: "/images/T-Shirts & Polos/Graphic T-Shirt/image.webp" },
+  { id: "henley-t-shirt", parent: "tshirts", label: "Henley T-Shirt", img: "/images/T-Shirts & Polos/Henley T-Shirt/image.webp" },
+  { id: "classic-polo-shirt", parent: "tshirts", label: "Classic Polo Shirt", img: "/images/T-Shirts & Polos/Classic Polo Shirt/image.webp" },
+  { id: "striped-polo-shirt", parent: "tshirts", label: "Striped Polo Shirt", img: "/images/T-Shirts & Polos/Striped Polo Shirt/image.webp" },
+  { id: "knit-polo-shirt", parent: "tshirts", label: "Knit Polo Shirt", img: "/images/T-Shirts & Polos/Knit Polo Shirt/image.webp" },
+  { id: "quarter-zip-polo-shirt", parent: "tshirts", label: "Quarter Zip Polo Shirt", img: "/images/T-Shirts & Polos/Quarter Zip Polo Shirt/image.webp" },
+  { id: "formal-trousers", parent: "bottoms", label: "Formal Trousers", img: "/images/Bottoms/Formal Trousers/image.webp" },
+  { id: "chino-pants", parent: "bottoms", label: "Chino Pants", img: "/images/Bottoms/Chino Pants/image.webp" },
+  { id: "linen-pants", parent: "bottoms", label: "Linen Pants", img: "/images/Bottoms/Linen Pants/image.webp" },
+  { id: "baggy-denim-jeans", parent: "bottoms", label: "Baggy Denim Jeans", img: "/images/Bottoms/Baggy Denim Jeans/image.webp" },
+  { id: "cargo-denim-jeans", parent: "bottoms", label: "Cargo Denim Jeans", img: "/images/Bottoms/Cargo Denim Jeans/image.webp" },
+  { id: "cargo-pants", parent: "bottoms", label: "Cargo Pants", img: "/images/Bottoms/Cargo Pants/image.webp" },
+  { id: "joggers", parent: "bottoms", label: "Joggers", img: "/images/Bottoms/Joggers/image.webp" },
+  { id: "linen-shorts", parent: "bottoms", label: "Linen Shorts", img: "/images/Bottoms/Linen Shorts/image.webp" },
+  { id: "formal-blazer", parent: "blazers-jackets", label: "Formal Blazer", img: "/images/Blazers & Jackets/Formal Blazer/image.webp" },
+  { id: "bomber-jacket", parent: "blazers-jackets", label: "Bomber Jacket", img: "/images/Blazers & Jackets/Bomber Jacket/image.webp" },
+  { id: "lightweight-utility-jacket", parent: "blazers-jackets", label: "Lightweight Utility Jacket", img: "/images/Blazers & Jackets/Lightweight Utility Jacket/image.webp" },
+  { id: "corporate-polo-uniform", parent: "uniforms", label: "Corporate Polo Uniform", img: "/images/Uniforms/Corporate Polo Uniform/image.webp" },
+  { id: "doctor-uniform", parent: "uniforms", label: "Doctor Uniform", img: "/images/Uniforms/Doctor Uniform/image.webp" },
+  { id: "chef-uniform", parent: "uniforms", label: "Chef Uniform", img: "/images/Uniforms/Chef Uniform/image.webp" },
+  { id: "safety-industrial-workwear-uniform", parent: "uniforms", label: "Safety or Industrial Workwear Uniform", img: "/images/Uniforms/Safety or Industrial Workwear Uniform/image.webp" },
 ];
 
 export default function Home() {
@@ -75,6 +74,32 @@ export default function Home() {
   const [filteredCategories, setFilteredCategories] = useState<CatalogCategory[]>(catalogCategories);
   const [fadeTrigger, setFadeTrigger] = useState(true);
 
+  // Marquee auto-scroll logic
+  const marqueeRef = useRef<HTMLElement>(null);
+  const [isMarqueeHovered, setIsMarqueeHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    const el = marqueeRef.current;
+    if (!el) return;
+    let animationId: number;
+
+    const scroll = () => {
+      if (!isMarqueeHovered && !isDragging) {
+        el.scrollLeft += 1;
+        // The total scroll width is roughly double because of duplicated cards.
+        // If we've scrolled past the first set, seamlessly jump back.
+        if (el.scrollLeft >= el.scrollWidth / 2) {
+          el.scrollLeft = 0;
+        }
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationId);
+  }, [isMarqueeHovered, isDragging]);
+
   // Shirts Featured Grid images
   const shirtImages = [
     "/images/shirts/shirts_1.png",
@@ -84,9 +109,9 @@ export default function Home() {
 
   // Tshirts Featured Grid images
   const tshirtImages = [
-    "/images/tshirts-polos/tshirts_polos_1.png",
-    "/images/tshirts-polos/tshirts_polos_2.png",
-    "/images/tshirts-polos/tshirts_polos_3.png"
+    "/images/T-Shirts & Polos/tshirts_polos_1.png",
+    "/images/T-Shirts & Polos/tshirts_polos_2.png",
+    "/images/T-Shirts & Polos/tshirts_polos_3.png"
   ];
 
   // Bottoms Featured Grid images
@@ -97,11 +122,11 @@ export default function Home() {
 
   // Uniforms Featured Grid images
   const uniformImages = [
-    "/images/workwear-uniforms/workwear_uniforms_1.png",
-    "/images/workwear-uniforms/workwear_uniforms_2.png",
-    "/images/workwear-uniforms/workwear_uniforms_3.png",
-    "/images/workwear-uniforms/workwear_uniforms_4.png",
-    "/images/workwear-uniforms/workwear_uniforms_5.png"
+    "/images/Uniforms/workwear_uniforms_1.png",
+    "/images/Uniforms/workwear_uniforms_2.png",
+    "/images/Uniforms/workwear_uniforms_3.png",
+    "/images/Uniforms/workwear_uniforms_4.png",
+    "/images/Uniforms/workwear_uniforms_5.png"
   ];
 
   // Quick View Modal state
@@ -344,7 +369,16 @@ export default function Home() {
 
 
       {/* Featured Categories Grid Section — 6 Main Categories */}
-      <section className="featured-categories-section">
+      <section 
+        className="featured-categories-section" 
+        ref={marqueeRef}
+        onMouseEnter={() => setIsMarqueeHovered(true)}
+        onMouseLeave={() => { setIsMarqueeHovered(false); setIsDragging(false); }}
+        onTouchStart={() => setIsDragging(true)}
+        onTouchEnd={() => setIsDragging(false)}
+        onMouseDown={() => setIsDragging(true)}
+        onMouseUp={() => setIsDragging(false)}
+      >
         <div className="categories-grid">
 
           {/* 01 Shirts */}
@@ -402,7 +436,7 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/formal-wear/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
+              <img src="/images/Blazers & Jackets/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">BLAZERS &amp; JACKETS</h3>
@@ -426,18 +460,83 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 06 Inner & Underwear */}
-          <div className="category-grid-card coming-soon-card">
+          {/* DUPLICATES FOR MARQUEE SCROLL LOOP */}
+          {/* 01 Shirts */}
+          <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "shirts")}>
             <div className="category-card-header">
-              <span className="cat-num">06</span>
+              <span className="cat-num">01</span>
               <span className="cat-arrow">↗</span>
             </div>
-            <div className="category-card-image-wrap category-placeholder-bg">
-              <div className="cat-coming-soon-overlay"><span>COMING SOON</span></div>
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src={shirtImages[0]} alt="Shirts 1" className="category-card-img img-default" />
+              {shirtImages[1] && <img src={shirtImages[1]} alt="Shirts 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
-              <h3 className="category-card-title">INNER &amp; UNDERWEAR</h3>
-              <span className="category-card-link muted">SOON</span>
+              <h3 className="category-card-title">SHIRTS</h3>
+              <a href="#products-section" className="category-card-link" onClick={(e) => handleCategoryNav(e, "shirts")}>VIEW</a>
+            </div>
+          </div>
+
+          {/* 02 T-Shirts & Polos */}
+          <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "tshirts")}>
+            <div className="category-card-header">
+              <span className="cat-num">02</span>
+              <span className="cat-arrow">↗</span>
+            </div>
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src={tshirtImages[0]} alt="T-Shirts & Polos 1" className="category-card-img img-default" />
+              {tshirtImages[1] && <img src={tshirtImages[1]} alt="T-Shirts & Polos 2" className="category-card-img img-hover" />}
+            </div>
+            <div className="category-card-footer">
+              <h3 className="category-card-title">T-SHIRTS &amp; POLOS</h3>
+              <a href="#products-section" className="category-card-link" onClick={(e) => handleCategoryNav(e, "tshirts")}>VIEW</a>
+            </div>
+          </div>
+
+          {/* 03 Bottoms */}
+          <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "bottoms")}>
+            <div className="category-card-header">
+              <span className="cat-num">03</span>
+              <span className="cat-arrow">↗</span>
+            </div>
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src={bottomImages[0]} alt="Bottoms 1" className="category-card-img img-default" />
+              {bottomImages[1] && <img src={bottomImages[1]} alt="Bottoms 2" className="category-card-img img-hover" />}
+            </div>
+            <div className="category-card-footer">
+              <h3 className="category-card-title">BOTTOMS</h3>
+              <a href="#products-section" className="category-card-link" onClick={(e) => handleCategoryNav(e, "bottoms")}>VIEW</a>
+            </div>
+          </div>
+
+          {/* 04 Blazers & Jackets */}
+          <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "blazers-jackets")}>
+            <div className="category-card-header">
+              <span className="cat-num">04</span>
+              <span className="cat-arrow">↗</span>
+            </div>
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src="/images/Blazers & Jackets/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
+            </div>
+            <div className="category-card-footer">
+              <h3 className="category-card-title">BLAZERS &amp; JACKETS</h3>
+              <a href="#products-section" className="category-card-link" onClick={(e) => handleCategoryNav(e, "blazers-jackets")}>VIEW</a>
+            </div>
+          </div>
+
+          {/* 05 Uniforms */}
+          <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "uniforms")}>
+            <div className="category-card-header">
+              <span className="cat-num">05</span>
+              <span className="cat-arrow">↗</span>
+            </div>
+            <div className="category-card-image-wrap" style={{ position: "relative" }}>
+              <img src={uniformImages[0]} alt="Uniforms 1" className="category-card-img img-default" />
+              {uniformImages[1] && <img src={uniformImages[1]} alt="Uniforms 2" className="category-card-img img-hover" />}
+            </div>
+            <div className="category-card-footer">
+              <h3 className="category-card-title">UNIFORMS</h3>
+              <a href="#products-section" className="category-card-link" onClick={(e) => handleCategoryNav(e, "uniforms")}>VIEW</a>
             </div>
           </div>
 
@@ -483,26 +582,8 @@ export default function Home() {
         <div className="section-container">
           <div className="section-header center-align">
             <div className="catalogue-title-container">
-              {/* Left side brand (Logo 2) */}
-              <div className="catalogue-side-brand left-side">
-                <img src="/logo 2.png" alt="Uniform Crown" className="side-brand-img" />
-                <div className="side-brand-info">
-                  <span className="side-brand-label">EST. UNIFORMS</span>
-                  <span className="side-brand-desc">FORMAL & WORKWEAR</span>
-                </div>
-              </div>
-
               <div className="section-title-wrap">
                 <h2 className="section-title">THE CATALOGUE</h2>
-              </div>
-
-              {/* Right side brand (Logo 3) */}
-              <div className="catalogue-side-brand right-side">
-                <img src="/logo 3.png" alt="Streetwear Crest" className="side-brand-img" />
-                <div className="side-brand-info">
-                  <span className="side-brand-label">STREETWEAR</span>
-                  <span className="side-brand-desc">GRAPHICS & POLOS</span>
-                </div>
               </div>
             </div>
             
@@ -576,7 +657,7 @@ export default function Home() {
                 <div key={cat.id} className="product-card reveal-on-scroll" style={{ cursor: 'pointer' }}>
                   <div className="product-image-wrap">
                     {/* Individual Watermark Background */}
-                    <img src="/logo 3.png" alt="Watermark" className="card-watermark" />
+
                     
                     {/* Category Image */}
                     <img

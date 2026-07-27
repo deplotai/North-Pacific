@@ -40,7 +40,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       <div className="preloader-content">
         <div className="preloader-logo-wrap">
           <img 
-            src="/images/transparent_logo.png" 
+            src="/logo.png" 
             alt="North Pacific Logo" 
             className="preloader-logo" 
           />
