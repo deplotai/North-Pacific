@@ -77,26 +77,31 @@ export default function Home() {
 
   // Shirts Featured Grid images
   const shirtImages = [
-    "/images/Shirts/Cuban Collar Shirt/image.png",
-    "/images/Shirts/Resort Shirt/image.png"
+    "/images/shirts/shirts_1.png",
+    "/images/shirts/shirts_2.png",
+    "/images/shirts/shirts_3.png"
   ];
 
   // Tshirts Featured Grid images
   const tshirtImages = [
-    "/images/T-Shirts & Polos/Plain Crew Neck T-Shirt/image.png",
-    "/images/T-Shirts & Polos/Oversized T-Shirt/image.png"
+    "/images/tshirts-polos/tshirts_polos_1.png",
+    "/images/tshirts-polos/tshirts_polos_2.png",
+    "/images/tshirts-polos/tshirts_polos_3.png"
   ];
 
   // Bottoms Featured Grid images
   const bottomImages = [
-    "/images/Bottoms/Formal Trousers/image.png",
-    "/images/Bottoms/Chino Pants/image.png"
+    "/images/bottoms/bottoms_1.png",
+    "/images/bottoms/bottoms_2.png"
   ];
 
   // Uniforms Featured Grid images
   const uniformImages = [
-    "/images/Uniforms/Corporate Polo Uniform/image.png",
-    "/images/Uniforms/Doctor Uniform/image.png"
+    "/images/workwear-uniforms/workwear_uniforms_1.png",
+    "/images/workwear-uniforms/workwear_uniforms_2.png",
+    "/images/workwear-uniforms/workwear_uniforms_3.png",
+    "/images/workwear-uniforms/workwear_uniforms_4.png",
+    "/images/workwear-uniforms/workwear_uniforms_5.png"
   ];
 
   // Quick View Modal state
@@ -397,7 +402,7 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/Blazers & Jackets/Formal Blazer/image.png" alt="Blazers & Jackets" className="category-card-img img-default" />
+              <img src="/images/formal-wear/formal_wear_1.png" alt="Blazers & Jackets" className="category-card-img img-default" />
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">BLAZERS &amp; JACKETS</h3>
@@ -412,7 +417,8 @@ export default function Home() {
               <span className="cat-arrow">↗</span>
             </div>
             <div className="category-card-image-wrap" style={{ position: "relative" }}>
-              <img src="/images/Uniforms/Corporate Polo Uniform/image.png" alt="Uniforms 1" className="category-card-img img-default" />
+              <img src={uniformImages[0]} alt="Uniforms 1" className="category-card-img img-default" />
+              {uniformImages[1] && <img src={uniformImages[1]} alt="Uniforms 2" className="category-card-img img-hover" />}
             </div>
             <div className="category-card-footer">
               <h3 className="category-card-title">UNIFORMS</h3>
