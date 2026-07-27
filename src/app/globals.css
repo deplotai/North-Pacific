@@ -3491,3 +3491,19 @@ button {
 .support-widget-fab:active {
     transform: scale(0.95);
 }
+
+.main-header.scrolled .nav-toggle .bar {
+    background-color: var(--color-black);
+}
+
+.main-header.scrolled .nav-link {
+    color: var(--color-black);
+}
+
+.main-header.scrolled .cart-toggle-btn {
+    color: var(--color-black);
+}
+
+.main-header.scrolled .header-logo-img {
+    filter: brightness(0);
+}
