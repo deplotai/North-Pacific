@@ -2082,6 +2082,7 @@ button {
     width: auto;
     object-fit: contain;
     transform: scale(2);
+    transform-origin: left center;
 }
 
 .footer-desc {
