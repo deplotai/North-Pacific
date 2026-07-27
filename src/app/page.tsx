@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef, FormEvent } from "react";
+import React, { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
 import { products, offers, Product, CATEGORY_TREE } from "@/data/cms";
 import { useCart } from "@/context/CartContext";
@@ -74,31 +74,7 @@ export default function Home() {
   const [filteredCategories, setFilteredCategories] = useState<CatalogCategory[]>(catalogCategories);
   const [fadeTrigger, setFadeTrigger] = useState(true);
 
-  // Marquee auto-scroll logic
-  const marqueeRef = useRef<HTMLElement>(null);
-  const [isMarqueeHovered, setIsMarqueeHovered] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
 
-  useEffect(() => {
-    const el = marqueeRef.current;
-    if (!el) return;
-    let animationId: number;
-
-    const scroll = () => {
-      if (!isMarqueeHovered && !isDragging) {
-        el.scrollLeft += 1;
-        // The total scroll width is roughly double because of duplicated cards.
-        // If we've scrolled past the first set, seamlessly jump back.
-        if (el.scrollLeft >= el.scrollWidth / 2) {
-          el.scrollLeft = 0;
-        }
-      }
-      animationId = requestAnimationFrame(scroll);
-    };
-
-    animationId = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationId);
-  }, [isMarqueeHovered, isDragging]);
 
   // Shirts Featured Grid images
   const shirtImages = [
@@ -369,16 +345,7 @@ export default function Home() {
 
 
       {/* Featured Categories Grid Section — 6 Main Categories */}
-      <section 
-        className="featured-categories-section" 
-        ref={marqueeRef}
-        onMouseEnter={() => setIsMarqueeHovered(true)}
-        onMouseLeave={() => { setIsMarqueeHovered(false); setIsDragging(false); }}
-        onTouchStart={() => setIsDragging(true)}
-        onTouchEnd={() => setIsDragging(false)}
-        onMouseDown={() => setIsDragging(true)}
-        onMouseUp={() => setIsDragging(false)}
-      >
+      <section className="featured-categories-section">
         <div className="categories-grid">
 
           {/* 01 Shirts */}
@@ -460,7 +427,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DUPLICATES FOR MARQUEE SCROLL LOOP */}
+          {/* DUPLICATES FOR CSS MARQUEE LOOP */}
           {/* 01 Shirts */}
           <div className="category-grid-card" onClick={(e) => handleCategoryNav(e, "shirts")}>
             <div className="category-card-header">
