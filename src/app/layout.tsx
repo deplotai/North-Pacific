@@ -33,6 +33,7 @@ export default function RootLayout({
       className={`${didot.variable} h-full antialiased`}
     >
       <head>
+        <link rel="preload" href="/logo.png" as="image" />
         {/* FontAwesome for icons */}
         <link
           rel="stylesheet"
