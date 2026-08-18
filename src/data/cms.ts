@@ -4,6 +4,8 @@ export interface OfferConfig {
   text: string;
   countdownHours: number;
   activeProductIds: string[];
+  enabled?: boolean;
+  position?: string;
 }
 
 export interface Product {
@@ -91,6 +93,8 @@ export const CATEGORY_TREE = [
 ] as const;
 
 export const offers: OfferConfig = {
+  enabled: false,
+  position: "section",
   bannerImage: "/images/mobile-hero-promo.webp",
   title: "OFFER WINDOW",
   text: "Elevate your wardrobe with premium fabrics. Special bundle pricing is active for a limited time. Add items to your cart and checkout via WhatsApp to lock in the deals.",

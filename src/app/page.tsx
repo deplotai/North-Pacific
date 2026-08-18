@@ -118,18 +118,53 @@ export default function Home() {
 
 
 
-  // Load dynamic configuration on mount
+  // Load dynamic configuration from Supabase APIs
   useEffect(() => {
-    const cachedConfig = localStorage.getItem("np_site_config");
-    if (cachedConfig) {
+    const loadData = async () => {
       try {
-        const parsed = JSON.parse(cachedConfig);
-        if (parsed.products) setProductsList(parsed.products);
-        if (parsed.offers) setOffersConfig(parsed.offers);
-      } catch (e) {
-        console.error("Failed to parse cached config", e);
+        const [prodRes, offRes] = await Promise.all([
+          fetch("/api/products", { cache: "no-store" }),
+          fetch("/api/offers", { cache: "no-store" })
+        ]);
+
+        if (prodRes.ok) {
+          const data = await prodRes.json();
+          const mappedProducts = data.map((p: any) => ({
+            id: p.id,
+            name: p.name,
+            mainCategory: p.main_category,
+            category: p.category,
+            price: p.price,
+            salePrice: p.sale_price,
+            badge: p.badge,
+            sizes: p.sizes,
+            images: p.images,
+            desc: p.description
+          }));
+          setProductsList(mappedProducts);
+        }
+
+        if (offRes.ok) {
+          const data = await offRes.json();
+          if (data) {
+            setOffersConfig({
+              enabled: data.enabled,
+              position: data.position,
+              title: data.title,
+              text: data.text,
+              bannerImage: data.banner_image,
+              countdownHours: data.countdown_hours,
+              showCountdown: data.show_countdown,
+              discountPercentage: data.discount_percentage,
+              activeProductIds: data.active_product_ids
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load data from server", err);
       }
-    }
+    };
+    loadData();
   }, []);
 
   // Filter categories when activeCategory or productsList changes
@@ -311,6 +346,70 @@ export default function Home() {
   return (
     <>
       {loading && <Preloader onComplete={() => setLoading(false)} />}
+      {/* Top Banner Offer */}
+      {offersConfig.enabled && (offersConfig.position === "top_banner" || offersConfig.position === "both") && (
+        <div style={{
+          backgroundColor: "var(--color-red)",
+          color: "white",
+          padding: "10px 20px",
+          textAlign: "center",
+          fontSize: "12px",
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "15px",
+          flexWrap: "wrap",
+          textTransform: "uppercase"
+        }}>
+          <span><i className="fa-solid fa-tags" style={{ marginRight: '8px' }}></i> {offersConfig.title} — {offersConfig.text}</span>
+          
+          {offersConfig.discountPercentage && (
+            <span style={{
+              backgroundColor: "var(--color-black)",
+              color: "white",
+              padding: "4px 10px",
+              borderRadius: "4px",
+              fontWeight: "900",
+              marginLeft: "10px"
+            }}>
+              {offersConfig.discountPercentage}% OFF
+            </span>
+          )}
+
+          {offersConfig.showCountdown && (
+            <span style={{ 
+              backgroundColor: "white", 
+              color: "var(--color-red)", 
+              padding: "4px 10px", 
+              borderRadius: "20px",
+              fontSize: "10px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "5px"
+            }}>
+              <i className="fa-solid fa-clock"></i>
+              {countdown.hours}:{countdown.minutes}:{countdown.seconds}
+            </span>
+          )}
+
+          {hasOfferConfig && (
+            <a 
+              href="#offers-section"
+              onClick={(e) => handleNavClick(e, "#offers-section")}
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                textUnderlineOffset: "4px"
+              }}
+            >
+              SHOP DEALS
+            </a>
+          )}
+        </div>
+      )}
+
       <Header onSelectCategory={handleCategoryClick} />
 
       {/* Hero Section */}
@@ -647,51 +746,78 @@ export default function Home() {
       </section>
 
       {/* Offer Sale Window */}
-      <section id="offers-section" className="offers-section">
-        <div className="offers-grid-container">
-          {/* Left Side Promo Banner */}
-          <div className="offer-banner-left">
-            <div
-              className="offer-banner-bg"
-              style={{ backgroundImage: `url('${offersConfig.bannerImage}')` }}
-            ></div>
-            <div className="offer-banner-content">
-              <span className="offer-badge">LIMITED TIME</span>
-              <h3 className="offer-banner-title">{offersConfig.title}</h3>
-              <p className="offer-banner-text">{offersConfig.text}</p>
-              <div className="offer-countdown">
-                <div className="countdown-item">
-                  <span className="countdown-num">{countdown.hours}</span>
-                  <span className="countdown-label">HOURS</span>
-                </div>
-                <div className="countdown-colon">:</div>
-                <div className="countdown-item">
-                  <span className="countdown-num">{countdown.minutes}</span>
-                  <span className="countdown-label">MINS</span>
-                </div>
-                <div className="countdown-colon">:</div>
-                <div className="countdown-item">
-                  <span className="countdown-num">{countdown.seconds}</span>
-                  <span className="countdown-label">SECS</span>
-                </div>
+      {offersConfig.enabled && (offersConfig.position === "section" || offersConfig.position === "both") && (
+        <section id="offers-section" className="offers-section">
+          <div className="offers-grid-container" style={!hasOfferConfig ? { gridTemplateColumns: '1fr' } : {}}>
+            {/* Left Side Promo Banner */}
+            <div className="offer-banner-left">
+              <div
+                className="offer-banner-bg"
+                style={{ backgroundImage: `url('${offersConfig.bannerImage}')` }}
+              ></div>
+              <div className="offer-banner-content">
+                <span className="offer-badge">
+                  {offersConfig.discountPercentage ? `${offersConfig.discountPercentage}% OFF` : 'LIMITED TIME'}
+                </span>
+                <h3 className="offer-banner-title">{offersConfig.title}</h3>
+                <p className="offer-banner-text">{offersConfig.text}</p>
+                {offersConfig.showCountdown && (
+                  <div className="offer-countdown">
+                    <div className="countdown-item">
+                      <span className="countdown-num">{countdown.hours}</span>
+                      <span className="countdown-label">HOURS</span>
+                    </div>
+                    <div className="countdown-colon">:</div>
+                    <div className="countdown-item">
+                      <span className="countdown-num">{countdown.minutes}</span>
+                      <span className="countdown-label">MINS</span>
+                    </div>
+                    <div className="countdown-colon">:</div>
+                    <div className="countdown-item">
+                      <span className="countdown-num">{countdown.seconds}</span>
+                      <span className="countdown-label">SECS</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
 
-          {/* Right Side Offer Products list (Empty as requested) */}
-          <div className="offer-list-right">
-            <div className="offer-list-header">
-              <h4>
-                ACTIVE OFFERS <span className="badge-red">SALE</span>
-              </h4>
-              <p>Direct discount products currently on offer</p>
-            </div>
-            <div className="offer-products-container">
-              {/* No products in offer right now */}
-            </div>
+            {/* Right Side Offer Products list */}
+            {hasOfferConfig && (
+              <div className="offer-list-right">
+                <div className="offer-list-header">
+                  <h4>
+                    ACTIVE OFFERS <span className="badge-red">SALE</span>
+                  </h4>
+                  <p>Direct discount products currently on offer</p>
+                </div>
+                <div className="offer-products-container">
+                  {offerItems.length === 0 ? (
+                    <p style={{ fontSize: "13px", color: "var(--color-text-muted)", padding: "20px 0" }}>
+                      No products currently on offer. Check back soon!
+                    </p>
+                  ) : (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '15px' }}>
+                      {offerItems.map((prod) => (
+                        <div key={prod.id} className="product-card" style={{ cursor: 'pointer' }} onClick={() => handleOpenQuickView(prod.id)}>
+                          <div className="product-image-wrap">
+                            <img src={prod.images[0]} alt={prod.name} className="product-img" loading="lazy" />
+                          </div>
+                          <div className="product-info-minimal" style={{ textAlign: "center", marginTop: "10px" }}>
+                            <span className="product-name-link-minimal" style={{ fontSize: '1rem', fontWeight: 600 }}>
+                              {prod.name}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* General Enquiry Section */}
       <section id="enquiry-section" className="enquiry-section section-padding">

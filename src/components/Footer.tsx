@@ -202,9 +202,6 @@ export default function Footer({ onSelectCategory }: FooterProps) {
         <div className="section-container footer-bottom-inner">
           <p>&copy; 2026 NORTH PACIFIC Apparel. All Rights Reserved.</p>
           <div className="footer-legal">
-            <Link href="/admin" style={{ marginRight: "15px", color: "var(--color-red)", fontWeight: 700 }}>
-              <i className="fa-solid fa-lock"></i> Admin Portal
-            </Link>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
           </div>

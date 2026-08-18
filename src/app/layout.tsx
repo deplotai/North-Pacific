@@ -9,12 +9,58 @@ const didot = GFS_Didot({
 });
 
 export const metadata: Metadata = {
-  title: "NORTH PACIFIC | Premium Streetwear",
-  description: "Premium streetwear and apparel by North Pacific. Order direct via WhatsApp.",
+  title: {
+    default: "NORTH PACIFIC | Premium Streetwear & Apparel",
+    template: "%s | NORTH PACIFIC",
+  },
+  description: "Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing, custom uniforms, and premium fabrics.",
+  keywords: ["streetwear", "premium apparel", "luxury clothing", "cuban collar shirts", "custom uniforms", "menswear", "fashion"],
+  authors: [{ name: "North Pacific" }],
+  creator: "North Pacific",
+  publisher: "North Pacific",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "NORTH PACIFIC | Premium Streetwear & Apparel",
+    description: "Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.",
+    url: "https://www.northpacific.com", // update with real domain
+    siteName: "NORTH PACIFIC",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 800,
+        height: 600,
+        alt: "North Pacific Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NORTH PACIFIC | Premium Streetwear",
+    description: "Premium streetwear brand combining minimalist design with structured silhouettes.",
+    images: ["/logo.webp"],
+    creator: "@northpacific",
+  },
   icons: {
     icon: "/logo.webp",
     shortcut: "/logo.webp",
     apple: "/logo.webp",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
