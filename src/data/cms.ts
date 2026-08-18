@@ -6,6 +6,8 @@ export interface OfferConfig {
   activeProductIds: string[];
   enabled?: boolean;
   position?: string;
+  showCountdown?: boolean;
+  discountPercentage?: number | null;
 }
 
 export interface Product {
