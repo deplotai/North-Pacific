@@ -9,6 +9,7 @@ const didot = GFS_Didot({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://northpacific.sa"),
   title: {
     default: "NORTH PACIFIC | Premium Streetwear & Apparel",
     template: "%s | NORTH PACIFIC",
@@ -26,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NORTH PACIFIC | Premium Streetwear & Apparel",
     description: "Premium streetwear brand combining minimalist design with structured silhouettes. Experience luxury clothing without boundaries.",
-    url: "https://www.northpacific.com", // update with real domain
+    url: "https://northpacific.sa",
     siteName: "NORTH PACIFIC",
     images: [
       {
-        url: "/logo.webp",
-        width: 800,
-        height: 600,
+        url: "/icon.png",
+        width: 512,
+        height: 512,
         alt: "North Pacific Logo",
       },
     ],
@@ -43,13 +44,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NORTH PACIFIC | Premium Streetwear",
     description: "Premium streetwear brand combining minimalist design with structured silhouettes.",
-    images: ["/logo.webp"],
+    images: ["/icon.png"],
     creator: "@northpacific",
   },
   icons: {
-    icon: "/logo.webp",
-    shortcut: "/logo.webp",
-    apple: "/logo.webp",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
   },
   robots: {
     index: true,
