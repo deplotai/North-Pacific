@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
-import { products, offers, Product, CATEGORY_TREE } from "@/data/cms";
+import { products, offers, Product, CATEGORY_TREE, OfferConfig } from "@/data/cms";
 import { useCart } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -67,7 +67,7 @@ export default function Home() {
 
   // Products and Offers dynamic state (synced with localStorage)
   const [productsList, setProductsList] = useState<Product[]>(products);
-  const [offersConfig, setOffersConfig] = useState(offers);
+  const [offersConfig, setOffersConfig] = useState<OfferConfig>(offers);
 
   // Active Category filter state
   const [activeCategory, setActiveCategory] = useState("all");
