@@ -302,7 +302,8 @@ export default function Home() {
     waMessage += `Please assist me. Thank you!`;
 
     const encodedMessage = encodeURIComponent(waMessage);
-    const waUrl = `https://wa.me/966500000000?text=${encodedMessage}`;
+    const phone = interest.includes("Wholesale") ? "966565423411" : "966568269698";
+    const waUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
 
     window.open(waUrl, "_blank");
     (e.target as HTMLFormElement).reset();
@@ -819,6 +820,16 @@ export default function Home() {
         </section>
       )}
 
+      {/* Our Process Placeholder */}
+      <section id="process-section" className="process-section section-padding" style={{ backgroundColor: "#f9f9f9" }}>
+        <div className="section-container center-align">
+          <h2 className="section-title">OUR PROCESS</h2>
+          <p className="section-desc">
+            Information about our process and other details will be showcased here soon.
+          </p>
+        </div>
+      </section>
+
       {/* General Enquiry Section */}
       <section id="enquiry-section" className="enquiry-section section-padding">
         <div className="section-container">
@@ -832,7 +843,7 @@ export default function Home() {
               </p>
               <div className="brochures-actions-row">
                 <a
-                  href="/brochures/Untitled.pdf"
+                  href="/brochures/catalogue.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="brochure-btn"
@@ -848,7 +859,6 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i> UNIFORMS BROCHURE
                 </a>
               </div>
-              
               <div style={{ marginTop: "30px", marginBottom: "30px" }}>
                 <span className="section-title" style={{ fontSize: "14px", display: "block" }}>Scan to Contact</span>
                 <div style={{ marginTop: "15px", width: "150px", height: "150px", overflow: "hidden", border: "1px solid var(--color-outline)", borderRadius: "4px" }}>
@@ -899,10 +909,8 @@ export default function Home() {
                   <div className="form-group">
                     <label htmlFor="enquiry-interest">INTERESTED IN</label>
                     <select id="enquiry-interest">
-                      <option value="Retail Purchase">Retail Purchase & Styling</option>
-                      <option value="Wholesale Bulk Order">Wholesale Bulk Order</option>
-                      <option value="Custom & Corporate Uniforms">Custom & Corporate Uniforms</option>
-                      <option value="General Inquiry">General Business Inquiry</option>
+                      <option value="Retail Enquiry">Retail Enquiry</option>
+                      <option value="Wholesale Enquiry">Wholesale Enquiry</option>
                     </select>
                   </div>
                   <div className="form-group">

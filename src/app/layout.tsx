@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "NORTH PACIFIC",
     images: [
       {
-        url: "/icon.png",
+        url: "/logo.webp",
         width: 512,
         height: 512,
         alt: "North Pacific Logo",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NORTH PACIFIC | Premium Streetwear",
     description: "Premium streetwear brand combining minimalist design with structured silhouettes.",
-    images: ["/icon.png"],
+    images: ["/logo.webp"],
     creator: "@northpacific",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/icon.png",
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
   },
   robots: {
     index: true,

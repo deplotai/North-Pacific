@@ -34,12 +34,20 @@ export default function SupportWidget() {
         </div>
         <div className="support-widget-body">
           <a
-            href={`https://wa.me/${supportNumber}?text=Hi!%20I%20need%20some%20help%20with%20an%20order.`}
+            href={`https://wa.me/966568269698?text=Hi!%20I%20have%20a%20retail%20enquiry.`}
             target="_blank"
             rel="noopener noreferrer"
             className="support-link whatsapp-link"
           >
-            <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            <i className="fa-brands fa-whatsapp"></i> Retail Enquiry
+          </a>
+          <a
+            href={`https://wa.me/966565423411?text=Hi!%20I%20have%20a%20wholesale%20enquiry.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="support-link whatsapp-link"
+          >
+            <i className="fa-brands fa-whatsapp"></i> Wholesale Enquiry
           </a>
           <a
             href={`mailto:${supportEmail}`}

@@ -105,6 +105,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                 src="/logo.webp" 
                 alt="North Pacific Logo" 
                 className="header-logo-img" 
+                style={{ transform: "scale(1.15)" }}
               />
             </div>
           </a>
