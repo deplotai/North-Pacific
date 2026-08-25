@@ -843,7 +843,7 @@ export default function Home() {
               </p>
               <div className="brochures-actions-row">
                 <a
-                  href="/brochures/catalogue.pdf"
+                  href="/brochures/Untitled_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="brochure-btn"
@@ -851,7 +851,7 @@ export default function Home() {
                   <i className="fa-solid fa-file-pdf"></i> COMPANY CATALOGUE
                 </a>
                 <a
-                  href="/brochures/uniform.pdf"
+                  href="/brochures/uniform_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="brochure-btn"

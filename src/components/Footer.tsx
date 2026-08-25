@@ -170,12 +170,12 @@ export default function Footer({ onSelectCategory }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="/brochures/catalogue.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/brochures/Untitled_compressed.pdf" target="_blank" rel="noopener noreferrer">
                   Streetwear Catalogue (PDF)
                 </a>
               </li>
               <li>
-                <a href="/brochures/uniform.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/brochures/uniform_compressed.pdf" target="_blank" rel="noopener noreferrer">
                   Corporate Uniforms (PDF)
                 </a>
               </li>

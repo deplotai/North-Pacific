@@ -74,7 +74,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
               </button>
               <div className="nav-dropdown-menu">
                 <a
-                  href="/brochures/Untitled.pdf"
+                  href="/brochures/Untitled_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dropdown-item"
@@ -82,7 +82,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                   Streetwear Catalogue
                 </a>
                 <a
-                  href="/brochures/uniform.pdf"
+                  href="/brochures/uniform_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dropdown-item"
@@ -232,7 +232,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
             {expandedMain === "brochures" && (
               <div className="sidebar-sub-list">
                 <a
-                  href="/brochures/Untitled.pdf"
+                  href="/brochures/Untitled_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="sidebar-sub-link"
@@ -241,7 +241,7 @@ export default function Header({ onSelectCategory }: HeaderProps) {
                   <span className="sub-dot">·</span> STREETWEAR CATALOGUE
                 </a>
                 <a
-                  href="/brochures/uniform.pdf"
+                  href="/brochures/uniform_compressed.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="sidebar-sub-link"
